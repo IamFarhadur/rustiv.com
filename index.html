@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+
 <html class="scroll-smooth" lang="en">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>RUSTIV | Official Streetwear Brand Bangladesh</title>
-  
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>RUSTIV | Official Streetwear Brand</title>
   <!-- Tailwind CSS v3 with Plugins -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  
   <!-- Tailwind Custom Config -->
   <script data-purpose="tailwind-config">
     tailwind.config = {
@@ -17,870 +17,688 @@
           colors: {
             brandGreen: '#00FF66',
             neonLime: '#00FF66',
-            darkBg: '#050505',
-            cardBg: '#0d0d0d',
-            borderDark: '#1a1a1a',
-            surfaceDark: '#121212'
+            darkBg: '#000000',
+            cardBg: '#0a0a0a',
+            borderDark: '#1a1a1a'
           },
           fontFamily: {
             sans: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif'],
             display: ['Archivo Black', 'Montserrat', 'sans-serif']
           },
           animation: {
-            marquee: 'marquee 28s linear infinite',
-            float: 'float 4s ease-in-out infinite',
-            pulseGlow: 'pulseGlow 2s infinite',
-            shimmer: 'shimmer 2.5s infinite'
+            marquee: 'marquee 25s linear infinite',
+            fadeUp: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both',
+            popIn: 'popIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both',
+            bump: 'bump 0.35s cubic-bezier(0.34,1.56,0.64,1)'
           },
           keyframes: {
             marquee: {
               '0%': { transform: 'translateX(0%)' },
               '100%': { transform: 'translateX(-50%)' }
             },
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-6px)' }
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(28px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
             },
-            pulseGlow: {
-              '0%, 100%': { boxShadow: '0 0 15px rgba(0,255,102,0.2)' },
-              '50%': { boxShadow: '0 0 30px rgba(0,255,102,0.6)' }
+            popIn: {
+              '0%': { opacity: '0', transform: 'scale(0.9)' },
+              '100%': { opacity: '1', transform: 'scale(1)' }
+            },
+            bump: {
+              '0%': { transform: 'scale(1)' },
+              '40%': { transform: 'scale(1.35)' },
+              '100%': { transform: 'scale(1)' }
             }
           }
         }
       }
     };
   </script>
-  
   <!-- Google Fonts: Montserrat & Archivo Black -->
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-  
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
   <style data-purpose="layout-and-custom">
     body {
-      background-color: #050505;
+      background-color: #000000;
       color: #ffffff;
       font-family: 'Montserrat', sans-serif;
       overflow-x: hidden;
       margin: 0;
       padding: 0;
     }
+
     .headline-font {
       font-family: 'Archivo Black', 'Montserrat', sans-serif;
       letter-spacing: -0.02em;
     }
+
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
+
     .no-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
 
-    /* Glassmorphism Classes */
-    .glass-header {
-      background: rgba(5, 5, 5, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-    .glass-card {
-      background: rgba(18, 18, 18, 0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .glass-badge {
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
     /* 2-line custom hamburger menu icon animation */
     .burger-line-1 {
-      width: 32px;
+      width: 30px;
       height: 2.5px;
       background-color: #ffffff;
       border-radius: 2px;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .burger-line-2 {
-      width: 22px;
+      width: 20px;
       height: 2.5px;
       background-color: #ffffff;
       border-radius: 2px;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     #menu-open-btn:hover .burger-line-2 {
-      width: 32px;
+      width: 30px;
       background-color: #00FF66;
     }
+
     #menu-open-btn:hover .burger-line-1 {
       background-color: #00FF66;
     }
 
-    /* Product Card High-Impact Styling & Animations */
-    .product-card {
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px -15px rgba(0, 255, 102, 0.25);
-      border-color: rgba(0, 255, 102, 0.6);
-    }
+    /* ===== Product & Category Card Interactions ===== */
     .product-img-wrap img {
-      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     }
+
+    .product-card {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px -12px rgba(0, 255, 102, 0.18), 0 4px 18px rgba(0, 0, 0, 0.55);
+    }
+
     .product-card:hover .product-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .category-card {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .category-card img {
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px -14px rgba(0, 255, 102, 0.22);
+    }
+
+    .category-card:hover img {
       transform: scale(1.09);
+      filter: brightness(0.85);
     }
-    .quick-view-overlay {
+
+    /* Buttons: tactile press + shine sweep */
+    .btn-tactile {
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background-color 0.25s ease;
+    }
+
+    .btn-tactile:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-tactile:active {
+      transform: scale(0.94);
+    }
+
+    .btn-buy {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-buy:hover {
+      box-shadow: 0 8px 20px -6px rgba(0, 255, 102, 0.55);
+    }
+
+    .btn-buy::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.55s ease;
+    }
+
+    .btn-buy:hover::after {
+      left: 130%;
+    }
+
+    /* Wishlist heart pop */
+    .wishlist-btn svg {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+    }
+
+    .wishlist-btn.pop svg {
+      animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Cart badge bump */
+    #cart-badge-count.bump {
+      animation: bump 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Scroll-reveal: single orchestrated entrance per section */
+    .reveal {
       opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .product-card:hover .quick-view-overlay {
+
+    .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Category Cards Lift */
-    .category-card {
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+    .reveal-stagger>* {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .category-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      border-color: #00FF66;
-      box-shadow: 0 15px 30px -10px rgba(0, 255, 102, 0.3);
+
+    .reveal-stagger.is-visible>* {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .category-card img {
-      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+
+    .reveal-stagger.is-visible>*:nth-child(1) {
+      transition-delay: 0.03s;
     }
-    .category-card:hover img {
-      transform: scale(1.12);
-      filter: brightness(0.85);
+
+    .reveal-stagger.is-visible>*:nth-child(2) {
+      transition-delay: 0.09s;
+    }
+
+    .reveal-stagger.is-visible>*:nth-child(3) {
+      transition-delay: 0.15s;
+    }
+
+    .reveal-stagger.is-visible>*:nth-child(4) {
+      transition-delay: 0.21s;
+    }
+
+    .reveal-stagger.is-visible>*:nth-child(5) {
+      transition-delay: 0.27s;
+    }
+
+    .reveal-stagger.is-visible>*:nth-child(6) {
+      transition-delay: 0.33s;
+    }
+
+    .reveal-stagger.is-visible>*:nth-child(7) {
+      transition-delay: 0.39s;
+    }
+
+    .reveal-stagger.is-visible>*:nth-child(8) {
+      transition-delay: 0.45s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .reveal,
+      .reveal-stagger>*,
+      .product-card,
+      .category-card,
+      .btn-tactile,
+      .product-img-wrap img,
+      .category-card img {
+        transition: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* Filter pill active swap animation */
+    .filter-pill {
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .filter-pill:active {
+      transform: scale(0.93);
     }
 
     /* Gradient Overlays */
     .hero-bottom-gradient {
-      background: linear-gradient(180deg, rgba(5,5,5,0) 30%, rgba(5,5,5,0.7) 65%, #050505 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.85) 75%, #000000 100%);
     }
 
-    /* Wishlist Heart Bounce */
-    .wishlist-btn svg {
-      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .wishlist-btn:active svg {
-      transform: scale(1.35);
+    /* Carousel Snap Scrolling */
+    .snap-slider {
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
     }
 
-    /* Customer & Celeb Marquees */
-    .customer-marquee, .celeb-marquee {
-      width: 100%;
-      overflow: hidden;
-      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    }
-    .customer-track {
-      display: flex;
-      width: max-content;
-      gap: 20px;
-      animation: customer-scroll 42s linear infinite;
-    }
-    .celeb-track {
-      display: flex;
-      width: max-content;
-      gap: 20px;
-      animation: celeb-scroll 48s linear infinite;
-    }
-    .customer-card, .celeb-card {
-      position: relative;
-      flex: 0 0 auto;
-      width: 310px;
-      aspect-ratio: 3 / 4;
-      overflow: hidden;
-      border-radius: 12px;
-      background: #121212;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.4s ease;
-    }
-    .customer-card:hover, .celeb-card:hover {
-      transform: translateY(-6px);
-      border-color: #00FF66;
-      box-shadow: 0 12px 30px -8px rgba(0, 255, 102, 0.3);
-    }
-    .customer-card img, .celeb-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .customer-card:hover img, .celeb-card:hover img {
-      transform: scale(1.08);
-    }
-    .customer-card::after, .celeb-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
-      pointer-events: none;
-    }
-    .customer-card span, .celeb-card span {
-      position: absolute;
-      z-index: 2;
-      bottom: 16px;
-      left: 16px;
-      right: 16px;
-      font-size: 13px;
-      font-weight: 800;
-      color: #ffffff;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    @keyframes customer-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(calc(-50% - 10px)); }
-    }
-    @keyframes celeb-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(calc(-50% - 10px)); }
-    }
-    .customer-marquee:hover .customer-track,
-    .celeb-marquee:hover .celeb-track {
-      animation-play-state: paused;
-    }
-
-    @media (max-width: 768px) {
-      .customer-card, .celeb-card { width: 250px; }
-    }
-
-    /* Modal Backdrop Transitions */
-    .modal-backdrop {
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-    .modal-backdrop.hidden-modal {
-      opacity: 0;
-      pointer-events: none;
-      visibility: hidden;
-    }
-    .modal-content {
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-    }
-    .modal-backdrop.hidden-modal .modal-content {
-      transform: scale(0.95) translateY(10px);
-      opacity: 0;
+    .snap-slide {
+      scroll-snap-align: start;
     }
   </style>
 </head>
 
-<body class="bg-[#050505] text-white antialiased selection:bg-brandGreen selection:text-black">
-
+<body class="bg-black text-white antialiased selection:bg-brandGreen selection:text-black">
   <!-- BEGIN: AnnouncementMarquee -->
-  <div class="w-full bg-[#00FF66] text-black text-[11px] sm:text-xs font-black py-2 uppercase tracking-wider overflow-hidden whitespace-nowrap z-50 relative border-b border-black shadow-md" data-purpose="announcement-bar">
+  <div
+    class="w-full bg-[#00FF66] text-black text-[11px] md:text-xs font-black py-1.5 uppercase tracking-wider overflow-hidden whitespace-nowrap z-50 relative border-b border-black"
+    data-purpose="announcement-bar">
     <div class="inline-flex animate-marquee items-center gap-10">
-      <span>⚡ RUSTIV OFFICIAL DROP 2026 LIVE NOW</span>
+      <span>RUSTIV OFFICIAL DROP 2026 LIVE</span>
       <span class="text-black/40">•</span>
-      <span>📦 CASH ON DELIVERY IN ALL 64 DISTRICTS</span>
+      <span>CASH ON DELIVERY IN ALL 64 DISTRICTS</span>
       <span class="text-black/40">•</span>
-      <span>🔥 FREE GIFT WITH EVERY COMBO ORDER</span>
+      <span>FREE ITEMS WITH COMBO OFFERS</span>
       <span class="text-black/40">•</span>
-      <span>🔍 CHECK PACKAGE SAFELY BEFORE PAYMENT</span>
+      <span>SAFELY CHECK PACKAGE AT DELIVERY</span>
       <span class="text-black/40">•</span>
-      <span>🔄 EASY 7-DAY RETURN POLICY</span>
+      <span>EASY 7-DAY RETURN POLICY</span>
       <span class="text-black/40">•</span>
-      <span>⚡ RUSTIV OFFICIAL DROP 2026 LIVE NOW</span>
+      <span>RUSTIV OFFICIAL DROP 2026 LIVE</span>
       <span class="text-black/40">•</span>
-      <span>📦 CASH ON DELIVERY IN ALL 64 DISTRICTS</span>
+      <span>CASH ON DELIVERY IN ALL 64 DISTRICTS</span>
       <span class="text-black/40">•</span>
-      <span>🔥 FREE GIFT WITH EVERY COMBO ORDER</span>
+      <span>FREE ITEMS WITH COMBO OFFERS</span>
       <span class="text-black/40">•</span>
-      <span>🔍 CHECK PACKAGE SAFELY BEFORE PAYMENT</span>
+      <span>SAFELY CHECK PACKAGE AT DELIVERY</span>
       <span class="text-black/40">•</span>
-      <span>🔄 EASY 7-DAY RETURN POLICY</span>
+      <span>EASY 7-DAY RETURN POLICY</span>
     </div>
   </div>
   <!-- END: AnnouncementMarquee -->
-
   <!-- BEGIN: MainHeader -->
-  <header class="sticky top-0 z-40 glass-header border-b border-white/10 px-4 md:px-8 py-3.5 transition-all duration-300 shadow-xl" data-purpose="site-header">
-    <div class="max-w-[1360px] mx-auto flex items-center justify-between">
-      
-      <!-- Left: Menu Toggle Button -->
+  <header
+    class="sticky top-0 z-40 bg-black/95 backdrop-blur-md border-b border-white/10 px-4 md:px-8 py-3 transition-all duration-300"
+    data-purpose="site-header">
+    <div class="max-w-[1120px] mx-auto flex items-center justify-between">
+      <!-- Left: Custom 2-Line Hamburger Menu Icon -->
       <div class="flex items-center">
-        <button aria-label="Open RUSTIV Menu" class="group flex flex-col justify-center items-start gap-1.5 p-2 focus:outline-none cursor-pointer" id="menu-open-btn">
+        <button aria-label="Open RUSTIV Menu"
+          class="group flex flex-col justify-center items-start gap-1.5 p-2 focus:outline-none cursor-pointer"
+          id="menu-open-btn">
           <span class="burger-line-1"></span>
           <span class="burger-line-2"></span>
         </button>
       </div>
-
-      <!-- Center: Official RUSTIV Brand Logo -->
-      <div class="flex justify-center items-center py-0.5">
+      <!-- Center: Exact RUSTIV Logo -->
+      <div class="flex justify-center items-center py-1">
         <a class="inline-block transition-transform hover:scale-105" href="#">
-          <img alt="RUSTIV Streetwear Brand Logo" class="h-8 sm:h-10 md:h-11 w-auto object-contain brightness-110 drop-shadow-[0_0_12px_rgba(0,255,102,0.3)]" src="https://cdn-by-iamfarhadur.vercel.app/rustiv.jpeg"/>
+          <img alt="RUSTIV Streetwear Brand Logo" class="h-7 sm:h-8 md:h-10 w-auto object-contain brightness-100"
+            src="https://cdn-by-iamfarhadur.vercel.app/rustiv.jpeg" />
         </a>
       </div>
-
-      <!-- Right: Search, Cart Counter, Wishlist Counter, User Profile -->
+      <!-- Right: Search, Cart Counter, User Profile -->
       <div class="flex items-center space-x-3 sm:space-x-5 text-white">
         <!-- Search Button -->
-        <button aria-label="Search Collection" class="hover:text-brandGreen transition-all transform hover:scale-110 focus:outline-none p-1.5 rounded-full hover:bg-white/5" id="search-btn">
+        <button aria-label="Search Collection" class="hover:text-brandGreen transition-colors focus:outline-none p-1"
+          id="search-btn">
           <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2"></path>
           </svg>
         </button>
-
         <!-- Cart Button -->
-        <button aria-label="Shopping Bag" class="relative hover:text-brandGreen transition-all transform hover:scale-110 focus:outline-none p-1.5 rounded-full hover:bg-white/5" id="cart-open-btn">
+        <button aria-label="Shopping Bag"
+          class="relative hover:text-brandGreen transition-colors focus:outline-none p-1" id="cart-open-btn">
           <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2"></path>
           </svg>
-          <span class="absolute -top-1 -right-1 bg-[#00FF66] text-black text-[11px] font-black rounded-full h-5 w-5 flex items-center justify-center shadow-[0_0_10px_#00FF66]" id="cart-badge-count">0</span>
+          <span
+            class="absolute -top-1 -right-1.5 bg-[#00FF66] text-black text-[10px] font-black rounded-full h-4 w-4 flex items-center justify-center"
+            id="cart-badge-count">0</span>
         </button>
-
-        <!-- Account Button -->
-        <button aria-label="User Account" class="hover:text-brandGreen transition-all transform hover:scale-110 focus:outline-none p-1.5 rounded-full hover:bg-white/5 hidden sm:block" onclick="showToast('Account portal coming soon!')">
+        <!-- User Profile -->
+        <button aria-label="User Account"
+          class="hover:text-brandGreen transition-colors focus:outline-none p-1 hidden sm:block">
           <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="2"></path>
           </svg>
         </button>
       </div>
     </div>
   </header>
   <!-- END: MainHeader -->
-
   <!-- BEGIN: HeroBannerSection -->
-  <section class="relative w-full h-[78vh] md:h-[88vh] min-h-[560px] max-h-[900px] overflow-hidden bg-black flex items-end justify-center border-b border-white/10" data-purpose="hero-section">
-    <!-- Hero Image with dynamic transition -->
-    <img id="hero-bg-img" alt="RUSTIV Streetwear Landing" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-90 contrast-105 transition-all duration-700 transform scale-100" src="https://cdn-by-iamfarhadur.vercel.app/rustiv-landing.jpeg"/>
-    
-    <!-- Dark Gradient Overlay -->
+  <section
+    class="relative w-full h-[75vh] md:h-[86vh] min-h-[520px] max-h-[820px] overflow-hidden bg-black flex items-end justify-center border-b border-white/5"
+    data-purpose="hero-section">
+    <!-- Hero Image -->
+    <img alt="RUSTIV Streetwear Landing"
+      class="absolute inset-0 w-full h-full object-cover object-center filter brightness-90 contrast-105"
+      src="https://cdn-by-iamfarhadur.vercel.app/rustiv-landing.jpeg" />
+    <!-- Hero Gradient Overlay (dark at bottom) -->
     <div class="absolute inset-0 hero-bottom-gradient"></div>
-
     <!-- Hero Content Overlay -->
-    <div class="relative z-20 max-w-[1360px] w-full mx-auto px-4 pb-16 md:pb-24 text-center flex flex-col items-center">
-      <span class="inline-flex items-center gap-2 bg-brandGreen text-black text-xs font-black tracking-widest uppercase px-4 py-1.5 mb-4 rounded-full shadow-[0_0_20px_rgba(0,255,102,0.5)]">
-        <span>🔥</span> OFFICIAL DROP 2026
+    <div
+      class="relative z-20 max-w-[1120px] w-full mx-auto px-4 pb-14 md:pb-20 text-center flex flex-col items-center animate-fadeUp">
+      <span
+        class="inline-block bg-brandGreen text-black text-[10px] md:text-xs font-black tracking-widest uppercase px-3 py-1 mb-3 rounded-sm shadow-md">
+        NEW DROP 2026
       </span>
-      <h1 id="hero-title" class="headline-font text-3xl sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-tight text-white max-w-5xl drop-shadow-[0_10px_20px_rgba(0,0,0,0.9)] leading-none">
-        CHECK OUT OUR HOTTEST PICKS
+      <h1
+        class="headline-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-white max-w-4xl drop-shadow-lg">
+        CHECKOUT OUR HOTTEST PICKS
       </h1>
-      <p id="hero-subtitle" class="text-xs sm:text-base text-neutral-300 font-medium mt-3.5 max-w-2xl leading-relaxed">
-        Authentic 320+ GSM heavyweight streetwear engineered for the bold, fearless youth of Bangladesh.
+      <p class="text-xs sm:text-sm text-neutral-300 font-medium mt-2 max-w-xl">
+        Authentic heavyweight streetwear engineered for the bold youth of Bangladesh.
       </p>
-      
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a class="bg-[#00FF66] hover:bg-white text-black font-black headline-font text-xs sm:text-sm uppercase tracking-wider px-9 py-4 rounded-full transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.5)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] transform hover:-translate-y-1" href="#hottest-picks">
-          EXPLORE DROPS Now
+      <div class="mt-6 flex items-center gap-4">
+        <a class="btn-tactile bg-[#00FF66] hover:bg-white text-black font-black headline-font text-xs sm:text-sm uppercase tracking-wider px-8 py-3.5 rounded-full shadow-[0_0_20px_rgba(0,255,102,0.4)] hover:shadow-[0_0_28px_rgba(255,255,255,0.45)]"
+          href="#hottest-picks">
+          SHOP NOW
         </a>
-        <button onclick="filterByCategory('drop-shoulder')" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold headline-font text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded-full border border-white/20 transition-all duration-300 transform hover:-translate-y-1">
-          DROP SHOULDER TEE
-        </button>
       </div>
-
-      <!-- Hero Slide Controls -->
-      <div class="flex items-center gap-3 mt-10">
-        <button aria-label="Hero Slide 1" class="hero-dot w-10 h-2 rounded-full bg-[#00FF66] transition-all shadow-[0_0_10px_#00FF66]" onclick="switchHeroSlide(0)"></button>
-        <button aria-label="Hero Slide 2" class="hero-dot w-3 h-2 rounded-full bg-white/40 hover:bg-white transition-all" onclick="switchHeroSlide(1)"></button>
-        <button aria-label="Hero Slide 3" class="hero-dot w-3 h-2 rounded-full bg-white/40 hover:bg-white transition-all" onclick="switchHeroSlide(2)"></button>
-        <button aria-label="Hero Slide 4" class="hero-dot w-3 h-2 rounded-full bg-white/40 hover:bg-white transition-all" onclick="switchHeroSlide(3)"></button>
+      <!-- Hero Carousel Indicators -->
+      <div class="flex items-center gap-2 mt-8">
+        <button aria-label="Hero Slide 1" class="w-8 h-1.5 rounded-full bg-[#00FF66] transition-all"></button>
+        <button aria-label="Hero Slide 2"
+          class="w-2 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+        <button aria-label="Hero Slide 3"
+          class="w-2 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+        <button aria-label="Hero Slide 4"
+          class="w-2 h-1.5 rounded-full bg-white/40 hover:bg-white transition-all"></button>
       </div>
     </div>
   </section>
   <!-- END: HeroBannerSection -->
-
   <!-- BEGIN: HottestPicksSection -->
-  <section class="py-16 md:py-24 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto" data-purpose="hottest-picks" id="hottest-picks">
+  <section class="py-14 md:py-20 px-4 max-w-[1240px] mx-auto reveal" data-purpose="hottest-picks" id="hottest-picks">
     <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 gap-5">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 md:mb-10 gap-4">
       <div>
-        <div class="flex items-center gap-3">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black headline-font uppercase tracking-tight text-white">
+        <div class="flex items-center gap-2">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-black headline-font uppercase tracking-tight text-white">
             HOTTEST PICKS
           </h2>
-          <span class="text-3xl sm:text-4xl animate-bounce">🌶️</span>
+          <span class="text-2xl md:text-3xl">🌶️</span>
         </div>
-        <p class="text-xs sm:text-base text-neutral-400 mt-2 font-medium">
-          The most sought-after oversized heavy drops from the RUSTIV urban studio.
+        <p class="text-xs sm:text-sm text-neutral-400 mt-1">
+          The most sought-after drops from the RUSTIV urban studio.
         </p>
       </div>
-      
-      <!-- Category Filter Pills -->
-      <div class="flex items-center gap-2.5 overflow-x-auto no-scrollbar py-2" id="category-filter-pills">
-        <button class="filter-pill active-pill text-xs sm:text-sm font-extrabold uppercase tracking-wider px-5 py-2.5 rounded-full bg-brandGreen text-black shadow-[0_0_15px_rgba(0,255,102,0.3)] transition-all cursor-pointer" data-cat="all">All Drops</button>
-        <button class="filter-pill text-xs sm:text-sm font-extrabold uppercase tracking-wider px-5 py-2.5 rounded-full bg-[#141414] hover:bg-neutral-800 text-neutral-300 transition-all border border-white/10 hover:border-brandGreen cursor-pointer" data-cat="drop-shoulder">Drop Shoulder</button>
-        <button class="filter-pill text-xs sm:text-sm font-extrabold uppercase tracking-wider px-5 py-2.5 rounded-full bg-[#141414] hover:bg-neutral-800 text-neutral-300 transition-all border border-white/10 hover:border-brandGreen cursor-pointer" data-cat="bottoms">Bottoms</button>
-        <button class="filter-pill text-xs sm:text-sm font-extrabold uppercase tracking-wider px-5 py-2.5 rounded-full bg-[#141414] hover:bg-neutral-800 text-neutral-300 transition-all border border-white/10 hover:border-brandGreen cursor-pointer" data-cat="caps">Caps & Headwear</button>
+      <!-- Quick category toggle buttons -->
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="category-filter-pills">
+        <button
+          class="filter-pill active-pill text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-brandGreen text-black"
+          data-cat="all">All</button>
+        <button
+          class="filter-pill text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800"
+          data-cat="drop-shoulder">Drop Shoulder</button>
+        <button
+          class="filter-pill text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800"
+          data-cat="bottoms">Bottoms</button>
+        <button
+          class="filter-pill text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800"
+          data-cat="caps">Caps</button>
       </div>
     </div>
-
-    <!-- Product Grid: 4 high-impact columns on desktop, 3 on md, 2 on sm, 1 on mobile -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8" id="products-grid">
-      
+    <!-- Product Grid: larger cards, 4 per row on Desktop -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 reveal-stagger" id="products-grid">
       <!-- Card 1 -->
-      <div class="product-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="drop-shoulder">
-        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950 product-img-wrap">
-          <span class="absolute top-3 left-3 z-10 bg-brandGreen text-black text-[10px] sm:text-xs font-black px-2.5 py-1 uppercase tracking-wider rounded-md shadow-md">NEW RELEASE</span>
-          
-          <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full glass-badge flex items-center justify-center text-neutral-300 hover:text-brandGreen hover:border-brandGreen transition-all">
+      <div
+        class="product-card group bg-[#0a0a0a] border border-[#1a1a1a] rounded-xl overflow-hidden flex flex-col justify-between"
+        data-category="drop-shoulder">
+        <div class="relative overflow-hidden aspect-[3/4] bg-neutral-950 product-img-wrap">
+          <span
+            class="absolute top-3 left-3 z-10 bg-brandGreen text-black text-[10px] font-black px-2 py-1 uppercase tracking-wider rounded-sm">NEW</span>
+          <button aria-label="Add to Wishlist"
+            class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 flex items-center justify-center text-neutral-300 hover:text-brandGreen">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+              <path
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </button>
-          
-          <img alt="RUSTIV Drop Shoulder Graphic Tee" class="w-full h-full object-cover object-center cursor-pointer" onclick="openQuickView('RUSTIV DROP SHOULDER TEE', 1490, 1790, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA', '280 GSM Heavy Cotton')" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA"/>
-          
-          <div class="quick-view-overlay absolute inset-x-3 bottom-3 z-10">
-            <button class="w-full bg-black/80 hover:bg-brandGreen hover:text-black border border-white/20 text-white font-black headline-font text-xs uppercase tracking-wider py-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg flex items-center justify-center gap-2" onclick="openQuickView('RUSTIV DROP SHOULDER TEE', 1490, 1790, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA', '280 GSM Heavy Cotton')">
-              <span>👁️ QUICK VIEW</span>
-            </button>
-          </div>
+          <img alt="RUSTIV Drop Shoulder Graphic Tee" class="w-full h-full object-cover object-center"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA" />
         </div>
-        
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
+        <div class="p-4 flex flex-col flex-grow justify-between">
           <div>
-            <div class="flex items-center justify-between text-[11px] font-bold text-brandGreen uppercase tracking-wider mb-1">
-              <span>280 GSM COMBED COTTON</span>
-              <span>⭐ 4.9 (128)</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold headline-font text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
+            <h3
+              class="text-sm sm:text-base font-bold text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
               RUSTIV DROP SHOULDER TEE
             </h3>
-            <div class="flex items-baseline space-x-2 mt-2">
-              <span class="text-base sm:text-xl font-black headline-font text-brandGreen">৳1,490</span>
+            <div class="flex items-center space-x-2 mt-1.5">
+              <span class="text-base sm:text-lg font-black headline-font text-white">৳1,490</span>
               <span class="text-xs text-neutral-500 line-through">৳1,790</span>
-              <span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.5 rounded">SAVE ৳300</span>
             </div>
           </div>
-
-          <div class="mt-4 grid grid-cols-2 gap-2">
-            <button class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] transform hover:scale-[1.02]" onclick="handleBuyNow('RUSTIV DROP SHOULDER TEE', 1490, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA')">
+          <div class="mt-4 flex flex-col gap-2">
+            <button
+              class="btn-tactile btn-buy w-full bg-brandGreen hover:bg-[#15e05d] text-black font-black text-xs uppercase tracking-wider py-2.5 rounded-lg"
+              onclick="handleBuyNow('RUSTIV DROP SHOULDER TEE', 1490)">
               BUY NOW
             </button>
-            <button class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all" onclick="handleAddToCart('RUSTIV DROP SHOULDER TEE', 1490, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA')">
-              + CART
+            <button
+              class="btn-tactile w-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider py-2.5 rounded-lg"
+              onclick="handleAddToCart('RUSTIV DROP SHOULDER TEE')">
+              ADD TO CART
             </button>
           </div>
         </div>
       </div>
-
       <!-- Card 2 -->
-      <div class="product-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="drop-shoulder">
-        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950 product-img-wrap">
-          <span class="absolute top-3 left-3 z-10 bg-white text-black text-[10px] sm:text-xs font-black px-2.5 py-1 uppercase tracking-wider rounded-md shadow-md">BESTSELLER</span>
-          
-          <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full glass-badge flex items-center justify-center text-neutral-300 hover:text-brandGreen hover:border-brandGreen transition-all">
+      <div
+        class="product-card group bg-[#0a0a0a] border border-[#1a1a1a] rounded-xl overflow-hidden flex flex-col justify-between"
+        data-category="drop-shoulder">
+        <div class="relative overflow-hidden aspect-[3/4] bg-neutral-950 product-img-wrap">
+          <span
+            class="absolute top-3 left-3 z-10 bg-white text-black text-[10px] font-black px-2 py-1 uppercase tracking-wider rounded-sm">SALE</span>
+          <button aria-label="Add to Wishlist"
+            class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 flex items-center justify-center text-neutral-300 hover:text-brandGreen">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+              <path
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </button>
-          
-          <img alt="RUSTIV Daytona Vintage Tee" class="w-full h-full object-cover object-center cursor-pointer" onclick="openQuickView('RUSTIV DAYTONA VINTAGE TEE', 1390, 1650, 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA', '300 GSM Vintage Wash')" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA"/>
-          
-          <div class="quick-view-overlay absolute inset-x-3 bottom-3 z-10">
-            <button class="w-full bg-black/80 hover:bg-brandGreen hover:text-black border border-white/20 text-white font-black headline-font text-xs uppercase tracking-wider py-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg flex items-center justify-center gap-2" onclick="openQuickView('RUSTIV DAYTONA VINTAGE TEE', 1390, 1650, 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA', '300 GSM Vintage Wash')">
-              <span>👁️ QUICK VIEW</span>
-            </button>
-          </div>
+          <img alt="RUSTIV Daytona Vintage Tee" class="w-full h-full object-cover object-center"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA" />
         </div>
-        
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
+        <div class="p-4 flex flex-col flex-grow justify-between">
           <div>
-            <div class="flex items-center justify-between text-[11px] font-bold text-brandGreen uppercase tracking-wider mb-1">
-              <span>300 GSM VINTAGE WASH</span>
-              <span>⭐ 5.0 (96)</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold headline-font text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
+            <h3
+              class="text-sm sm:text-base font-bold text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
               RUSTIV DAYTONA VINTAGE TEE
             </h3>
-            <div class="flex items-baseline space-x-2 mt-2">
-              <span class="text-base sm:text-xl font-black headline-font text-brandGreen">৳1,390</span>
+            <div class="flex items-center space-x-2 mt-1.5">
+              <span class="text-base sm:text-lg font-black headline-font text-white">৳1,390</span>
               <span class="text-xs text-neutral-500 line-through">৳1,650</span>
-              <span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.5 rounded">SAVE ৳260</span>
             </div>
           </div>
-
-          <div class="mt-4 grid grid-cols-2 gap-2">
-            <button class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] transform hover:scale-[1.02]" onclick="handleBuyNow('RUSTIV DAYTONA VINTAGE TEE', 1390, 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA')">
+          <div class="mt-4 flex flex-col gap-2">
+            <button
+              class="btn-tactile btn-buy w-full bg-brandGreen hover:bg-[#15e05d] text-black font-black text-xs uppercase tracking-wider py-2.5 rounded-lg"
+              onclick="handleBuyNow('RUSTIV DAYTONA VINTAGE TEE', 1390)">
               BUY NOW
             </button>
-            <button class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all" onclick="handleAddToCart('RUSTIV DAYTONA VINTAGE TEE', 1390, 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA')">
-              + CART
+            <button
+              class="btn-tactile w-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider py-2.5 rounded-lg"
+              onclick="handleAddToCart('RUSTIV DAYTONA VINTAGE TEE')">
+              ADD TO CART
             </button>
           </div>
         </div>
       </div>
-
       <!-- Card 3 -->
-      <div class="product-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="drop-shoulder">
-        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950 product-img-wrap">
-          <span class="absolute top-3 left-3 z-10 bg-brandGreen text-black text-[10px] sm:text-xs font-black px-2.5 py-1 uppercase tracking-wider rounded-md shadow-md">LIMITED DROP</span>
-          
-          <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full glass-badge flex items-center justify-center text-neutral-300 hover:text-brandGreen hover:border-brandGreen transition-all">
+      <div
+        class="product-card group bg-[#0a0a0a] border border-[#1a1a1a] rounded-xl overflow-hidden flex flex-col justify-between"
+        data-category="drop-shoulder">
+        <div class="relative overflow-hidden aspect-[3/4] bg-neutral-950 product-img-wrap">
+          <span
+            class="absolute top-3 left-3 z-10 bg-brandGreen text-black text-[10px] font-black px-2 py-1 uppercase tracking-wider rounded-sm">NEW</span>
+          <button aria-label="Add to Wishlist"
+            class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 flex items-center justify-center text-neutral-300 hover:text-brandGreen">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+              <path
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </button>
-          
-          <img alt="RUSTIV Acid Wash Tokyo" class="w-full h-full object-cover object-center cursor-pointer" onclick="openQuickView('RUSTIV ACID WASH TOKYO TEE', 1550, 1850, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA', '320 GSM Acid Wash')" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA"/>
-          
-          <div class="quick-view-overlay absolute inset-x-3 bottom-3 z-10">
-            <button class="w-full bg-black/80 hover:bg-brandGreen hover:text-black border border-white/20 text-white font-black headline-font text-xs uppercase tracking-wider py-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg flex items-center justify-center gap-2" onclick="openQuickView('RUSTIV ACID WASH TOKYO TEE', 1550, 1850, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA', '320 GSM Acid Wash')">
-              <span>👁️ QUICK VIEW</span>
-            </button>
-          </div>
+          <img alt="RUSTIV Acid Wash Tokyo" class="w-full h-full object-cover object-center"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA" />
         </div>
-        
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
+        <div class="p-4 flex flex-col flex-grow justify-between">
           <div>
-            <div class="flex items-center justify-between text-[11px] font-bold text-brandGreen uppercase tracking-wider mb-1">
-              <span>320 GSM ACID WASH</span>
-              <span>⭐ 4.95 (84)</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold headline-font text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
+            <h3
+              class="text-sm sm:text-base font-bold text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
               RUSTIV ACID WASH TOKYO TEE
             </h3>
-            <div class="flex items-baseline space-x-2 mt-2">
-              <span class="text-base sm:text-xl font-black headline-font text-brandGreen">৳1,550</span>
+            <div class="flex items-center space-x-2 mt-1.5">
+              <span class="text-base sm:text-lg font-black headline-font text-white">৳1,550</span>
               <span class="text-xs text-neutral-500 line-through">৳1,850</span>
-              <span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.5 rounded">SAVE ৳300</span>
             </div>
           </div>
-
-          <div class="mt-4 grid grid-cols-2 gap-2">
-            <button class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] transform hover:scale-[1.02]" onclick="handleBuyNow('RUSTIV ACID WASH TOKYO TEE', 1550, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA')">
+          <div class="mt-4 flex flex-col gap-2">
+            <button
+              class="btn-tactile btn-buy w-full bg-brandGreen hover:bg-[#15e05d] text-black font-black text-xs uppercase tracking-wider py-2.5 rounded-lg"
+              onclick="handleBuyNow('RUSTIV ACID WASH TOKYO TEE', 1550)">
               BUY NOW
             </button>
-            <button class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all" onclick="handleAddToCart('RUSTIV ACID WASH TOKYO TEE', 1550, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA')">
-              + CART
+            <button
+              class="btn-tactile w-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider py-2.5 rounded-lg"
+              onclick="handleAddToCart('RUSTIV ACID WASH TOKYO TEE')">
+              ADD TO CART
             </button>
           </div>
         </div>
       </div>
-
       <!-- Card 4 -->
-      <div class="product-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="bottoms">
-        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950 product-img-wrap">
-          <span class="absolute top-3 left-3 z-10 bg-brandGreen text-black text-[10px] sm:text-xs font-black px-2.5 py-1 uppercase tracking-wider rounded-md shadow-md">HEAVYWEIGHT</span>
-          
-          <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full glass-badge flex items-center justify-center text-neutral-300 hover:text-brandGreen hover:border-brandGreen transition-all">
+      <div
+        class="product-card group bg-[#0a0a0a] border border-[#1a1a1a] rounded-xl overflow-hidden flex flex-col justify-between"
+        data-category="bottoms">
+        <div class="relative overflow-hidden aspect-[3/4] bg-neutral-950 product-img-wrap">
+          <span
+            class="absolute top-3 left-3 z-10 bg-brandGreen text-black text-[10px] font-black px-2 py-1 uppercase tracking-wider rounded-sm">NEW</span>
+          <button aria-label="Add to Wishlist"
+            class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 flex items-center justify-center text-neutral-300 hover:text-brandGreen">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+              <path
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </button>
-          
-          <img alt="RUSTIV Tactical Cargo Pants" class="w-full h-full object-cover object-center cursor-pointer" onclick="openQuickView('RUSTIV TACTICAL CARGO PANT', 2190, 2590, 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng', 'Heavy Duty Twill Cotton')" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng"/>
-          
-          <div class="quick-view-overlay absolute inset-x-3 bottom-3 z-10">
-            <button class="w-full bg-black/80 hover:bg-brandGreen hover:text-black border border-white/20 text-white font-black headline-font text-xs uppercase tracking-wider py-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg flex items-center justify-center gap-2" onclick="openQuickView('RUSTIV TACTICAL CARGO PANT', 2190, 2590, 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng', 'Heavy Duty Twill Cotton')">
-              <span>👁️ QUICK VIEW</span>
-            </button>
-          </div>
+          <img alt="RUSTIV Tactical Cargo Pants" class="w-full h-full object-cover object-center"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng" />
         </div>
-        
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
+        <div class="p-4 flex flex-col flex-grow justify-between">
           <div>
-            <div class="flex items-center justify-between text-[11px] font-bold text-brandGreen uppercase tracking-wider mb-1">
-              <span>6-POCKET TACTICAL FIT</span>
-              <span>⭐ 4.88 (142)</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold headline-font text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
+            <h3
+              class="text-sm sm:text-base font-bold text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
               RUSTIV TACTICAL CARGO PANT
             </h3>
-            <div class="flex items-baseline space-x-2 mt-2">
-              <span class="text-base sm:text-xl font-black headline-font text-brandGreen">৳2,190</span>
+            <div class="flex items-center space-x-2 mt-1.5">
+              <span class="text-base sm:text-lg font-black headline-font text-white">৳2,190</span>
               <span class="text-xs text-neutral-500 line-through">৳2,590</span>
-              <span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.5 rounded">SAVE ৳400</span>
             </div>
           </div>
-
-          <div class="mt-4 grid grid-cols-2 gap-2">
-            <button class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] transform hover:scale-[1.02]" onclick="handleBuyNow('RUSTIV TACTICAL CARGO PANT', 2190, 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng')">
+          <div class="mt-4 flex flex-col gap-2">
+            <button
+              class="btn-tactile btn-buy w-full bg-brandGreen hover:bg-[#15e05d] text-black font-black text-xs uppercase tracking-wider py-2.5 rounded-lg"
+              onclick="handleBuyNow('RUSTIV TACTICAL CARGO PANT', 2190)">
               BUY NOW
             </button>
-            <button class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all" onclick="handleAddToCart('RUSTIV TACTICAL CARGO PANT', 2190, 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng')">
-              + CART
+            <button
+              class="btn-tactile w-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider py-2.5 rounded-lg"
+              onclick="handleAddToCart('RUSTIV TACTICAL CARGO PANT')">
+              ADD TO CART
             </button>
           </div>
         </div>
       </div>
-
-      <!-- Card 5 -->
-      <div class="product-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="caps">
-        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950 product-img-wrap">
-          <span class="absolute top-3 left-3 z-10 bg-white text-black text-[10px] sm:text-xs font-black px-2.5 py-1 uppercase tracking-wider rounded-md shadow-md">CYBER DROP</span>
-          
-          <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full glass-badge flex items-center justify-center text-neutral-300 hover:text-brandGreen hover:border-brandGreen transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
-            </svg>
-          </button>
-          
-          <img alt="RUSTIV Cyber Matrix Tee" class="w-full h-full object-cover object-center cursor-pointer" onclick="openQuickView('RUSTIV CYBER MATRIX TEE', 1450, 1750, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLVPBD_sXFgFpCP-ori_YY_jKfNfvGsxG_LzB7mcnmRvhwU1BUom7FK3OsJnKZtJvr9oQ-x1jCYva70x9bGLTMFONvKl6MCqToFABKG58zdfv7UAkhWalf83LNdbCOmbssoGN-omYLHJ-ssLyMR30i6-O3YXaIn7szMPMMzL5Hp_-6FvuLYVnFGmNGonpGq0HjexoZJsLsjh7buF9PNU3SaGeunnHyu9s4P5pFJmbeI9kmbZAUTR-_jA', '290 GSM Cyber Print')" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLVPBD_sXFgFpCP-ori_YY_jKfNfvGsxG_LzB7mcnmRvhwU1BUom7FK3OsJnKZtJvr9oQ-x1jCYva70x9bGLTMFONvKl6MCqToFABKG58zdfv7UAkhWalf83LNdbCOmbssoGN-omYLHJ-ssLyMR30i6-O3YXaIn7szMPMMzL5Hp_-6FvuLYVnFGmNGonpGq0HjexoZJsLsjh7buF9PNU3SaGeunnHyu9s4P5pFJmbeI9kmbZAUTR-_jA"/>
-          
-          <div class="quick-view-overlay absolute inset-x-3 bottom-3 z-10">
-            <button class="w-full bg-black/80 hover:bg-brandGreen hover:text-black border border-white/20 text-white font-black headline-font text-xs uppercase tracking-wider py-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg flex items-center justify-center gap-2" onclick="openQuickView('RUSTIV CYBER MATRIX TEE', 1450, 1750, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLVPBD_sXFgFpCP-ori_YY_jKfNfvGsxG_LzB7mcnmRvhwU1BUom7FK3OsJnKZtJvr9oQ-x1jCYva70x9bGLTMFONvKl6MCqToFABKG58zdfv7UAkhWalf83LNdbCOmbssoGN-omYLHJ-ssLyMR30i6-O3YXaIn7szMPMMzL5Hp_-6FvuLYVnFGmNGonpGq0HjexoZJsLsjh7buF9PNU3SaGeunnHyu9s4P5pFJmbeI9kmbZAUTR-_jA', '290 GSM Cyber Print')">
-              <span>👁️ QUICK VIEW</span>
-            </button>
-          </div>
-        </div>
-        
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-bold text-brandGreen uppercase tracking-wider mb-1">
-              <span>290 GSM NEON GRAPHIC</span>
-              <span>⭐ 4.91 (110)</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold headline-font text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
-              RUSTIV CYBER MATRIX TEE
-            </h3>
-            <div class="flex items-baseline space-x-2 mt-2">
-              <span class="text-base sm:text-xl font-black headline-font text-brandGreen">৳1,450</span>
-              <span class="text-xs text-neutral-500 line-through">৳1,750</span>
-              <span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.5 rounded">SAVE ৳300</span>
-            </div>
-          </div>
-
-          <div class="mt-4 grid grid-cols-2 gap-2">
-            <button class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] transform hover:scale-[1.02]" onclick="handleBuyNow('RUSTIV CYBER MATRIX TEE', 1450, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLVPBD_sXFgFpCP-ori_YY_jKfNfvGsxG_LzB7mcnmRvhwU1BUom7FK3OsJnKZtJvr9oQ-x1jCYva70x9bGLTMFONvKl6MCqToFABKG58zdfv7UAkhWalf83LNdbCOmbssoGN-omYLHJ-ssLyMR30i6-O3YXaIn7szMPMMzL5Hp_-6FvuLYVnFGmNGonpGq0HjexoZJsLsjh7buF9PNU3SaGeunnHyu9s4P5pFJmbeI9kmbZAUTR-_jA')">
-              BUY NOW
-            </button>
-            <button class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all" onclick="handleAddToCart('RUSTIV CYBER MATRIX TEE', 1450, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLVPBD_sXFgFpCP-ori_YY_jKfNfvGsxG_LzB7mcnmRvhwU1BUom7FK3OsJnKZtJvr9oQ-x1jCYva70x9bGLTMFONvKl6MCqToFABKG58zdfv7UAkhWalf83LNdbCOmbssoGN-omYLHJ-ssLyMR30i6-O3YXaIn7szMPMMzL5Hp_-6FvuLYVnFGmNGonpGq0HjexoZJsLsjh7buF9PNU3SaGeunnHyu9s4P5pFJmbeI9kmbZAUTR-_jA')">
-              + CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="product-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="drop-shoulder">
-        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950 product-img-wrap">
-          <span class="absolute top-3 left-3 z-10 bg-brandGreen text-black text-[10px] sm:text-xs font-black px-2.5 py-1 uppercase tracking-wider rounded-md shadow-md">WINTER HEAVY</span>
-          
-          <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full glass-badge flex items-center justify-center text-neutral-300 hover:text-brandGreen hover:border-brandGreen transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
-            </svg>
-          </button>
-          
-          <img alt="RUSTIV Oversized Heavy Hoodie" class="w-full h-full object-cover object-center cursor-pointer" onclick="openQuickView('RUSTIV OVERSIZED HOODIE', 2490, 2990, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ', '420 GSM Fleece Cotton')" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ"/>
-          
-          <div class="quick-view-overlay absolute inset-x-3 bottom-3 z-10">
-            <button class="w-full bg-black/80 hover:bg-brandGreen hover:text-black border border-white/20 text-white font-black headline-font text-xs uppercase tracking-wider py-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg flex items-center justify-center gap-2" onclick="openQuickView('RUSTIV OVERSIZED HOODIE', 2490, 2990, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ', '420 GSM Fleece Cotton')">
-              <span>👁️ QUICK VIEW</span>
-            </button>
-          </div>
-        </div>
-        
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-bold text-brandGreen uppercase tracking-wider mb-1">
-              <span>420 GSM FLEECE</span>
-              <span>⭐ 5.0 (78)</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold headline-font text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
-              RUSTIV OVERSIZED HOODIE
-            </h3>
-            <div class="flex items-baseline space-x-2 mt-2">
-              <span class="text-base sm:text-xl font-black headline-font text-brandGreen">৳2,490</span>
-              <span class="text-xs text-neutral-500 line-through">৳2,990</span>
-              <span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.5 rounded">SAVE ৳500</span>
-            </div>
-          </div>
-
-          <div class="mt-4 grid grid-cols-2 gap-2">
-            <button class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] transform hover:scale-[1.02]" onclick="handleBuyNow('RUSTIV OVERSIZED HOODIE', 2490, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ')">
-              BUY NOW
-            </button>
-            <button class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all" onclick="handleAddToCart('RUSTIV OVERSIZED HOODIE', 2490, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ')">
-              + CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="product-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="drop-shoulder">
-        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950 product-img-wrap">
-          <span class="absolute top-3 left-3 z-10 bg-white text-black text-[10px] sm:text-xs font-black px-2.5 py-1 uppercase tracking-wider rounded-md shadow-md">ATHLETIC</span>
-          
-          <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full glass-badge flex items-center justify-center text-neutral-300 hover:text-brandGreen hover:border-brandGreen transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
-            </svg>
-          </button>
-          
-          <img alt="RUSTIV Athletic Track Jersey" class="w-full h-full object-cover object-center cursor-pointer" onclick="openQuickView('RUSTIV ATHLETIC TRACK JERSEY', 1690, 1990, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdoMYimjHEqxEuicEKyiCsG0Oo0UI38eaTVHRfPX3hS62_WaH3jwFMkN5SOyWEbB69kR_HQhFmnweax9AkK3DB7012HLDqJ2yylBNbkrFUTpt4AKiAszRJidOA68T0Hi80-aM1-RuGbQm5QnmONB8QcXyZjbP8McxmoBdxTjGXg17JAMmUvmfF8E3yxeSNdd1pnewswWQsamCnDfi6zzUK-irGKqvqm8ngcXJB3l_O0nCu6-mhJNvgLg', 'Breathable Performance Mesh')" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdoMYimjHEqxEuicEKyiCsG0Oo0UI38eaTVHRfPX3hS62_WaH3jwFMkN5SOyWEbB69kR_HQhFmnweax9AkK3DB7012HLDqJ2yylBNbkrFUTpt4AKiAszRJidOA68T0Hi80-aM1-RuGbQm5QnmONB8QcXyZjbP8McxmoBdxTjGXg17JAMmUvmfF8E3yxeSNdd1pnewswWQsamCnDfi6zzUK-irGKqvqm8ngcXJB3l_O0nCu6-mhJNvgLg"/>
-          
-          <div class="quick-view-overlay absolute inset-x-3 bottom-3 z-10">
-            <button class="w-full bg-black/80 hover:bg-brandGreen hover:text-black border border-white/20 text-white font-black headline-font text-xs uppercase tracking-wider py-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg flex items-center justify-center gap-2" onclick="openQuickView('RUSTIV ATHLETIC TRACK JERSEY', 1690, 1990, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdoMYimjHEqxEuicEKyiCsG0Oo0UI38eaTVHRfPX3hS62_WaH3jwFMkN5SOyWEbB69kR_HQhFmnweax9AkK3DB7012HLDqJ2yylBNbkrFUTpt4AKiAszRJidOA68T0Hi80-aM1-RuGbQm5QnmONB8QcXyZjbP8McxmoBdxTjGXg17JAMmUvmfF8E3yxeSNdd1pnewswWQsamCnDfi6zzUK-irGKqvqm8ngcXJB3l_O0nCu6-mhJNvgLg', 'Breathable Performance Mesh')">
-              <span>👁️ QUICK VIEW</span>
-            </button>
-          </div>
-        </div>
-        
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-bold text-brandGreen uppercase tracking-wider mb-1">
-              <span>PRO ATHLETIC MESH</span>
-              <span>⭐ 4.89 (64)</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold headline-font text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
-              RUSTIV ATHLETIC TRACK JERSEY
-            </h3>
-            <div class="flex items-baseline space-x-2 mt-2">
-              <span class="text-base sm:text-xl font-black headline-font text-brandGreen">৳1,690</span>
-              <span class="text-xs text-neutral-500 line-through">৳1,990</span>
-              <span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.5 rounded">SAVE ৳300</span>
-            </div>
-          </div>
-
-          <div class="mt-4 grid grid-cols-2 gap-2">
-            <button class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] transform hover:scale-[1.02]" onclick="handleBuyNow('RUSTIV ATHLETIC TRACK JERSEY', 1690, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdoMYimjHEqxEuicEKyiCsG0Oo0UI38eaTVHRfPX3hS62_WaH3jwFMkN5SOyWEbB69kR_HQhFmnweax9AkK3DB7012HLDqJ2yylBNbkrFUTpt4AKiAszRJidOA68T0Hi80-aM1-RuGbQm5QnmONB8QcXyZjbP8McxmoBdxTjGXg17JAMmUvmfF8E3yxeSNdd1pnewswWQsamCnDfi6zzUK-irGKqvqm8ngcXJB3l_O0nCu6-mhJNvgLg')">
-              BUY NOW
-            </button>
-            <button class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all" onclick="handleAddToCart('RUSTIV ATHLETIC TRACK JERSEY', 1690, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdoMYimjHEqxEuicEKyiCsG0Oo0UI38eaTVHRfPX3hS62_WaH3jwFMkN5SOyWEbB69kR_HQhFmnweax9AkK3DB7012HLDqJ2yylBNbkrFUTpt4AKiAszRJidOA68T0Hi80-aM1-RuGbQm5QnmONB8QcXyZjbP8McxmoBdxTjGXg17JAMmUvmfF8E3yxeSNdd1pnewswWQsamCnDfi6zzUK-irGKqvqm8ngcXJB3l_O0nCu6-mhJNvgLg')">
-              + CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 8 -->
-      <div class="product-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="caps">
-        <div class="relative overflow-hidden aspect-[4/5] bg-neutral-950 product-img-wrap">
-          <span class="absolute top-3 left-3 z-10 bg-brandGreen text-black text-[10px] sm:text-xs font-black px-2.5 py-1 uppercase tracking-wider rounded-md shadow-md">HEADWEAR</span>
-          
-          <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full glass-badge flex items-center justify-center text-neutral-300 hover:text-brandGreen hover:border-brandGreen transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
-            </svg>
-          </button>
-          
-          <img alt="RUSTIV Urban Snapback Cap" class="w-full h-full object-cover object-center cursor-pointer" onclick="openQuickView('RUSTIV URBAN SNAPBACK CAP', 990, 1250, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew', 'High Density Embroidered Cotton')" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew"/>
-          
-          <div class="quick-view-overlay absolute inset-x-3 bottom-3 z-10">
-            <button class="w-full bg-black/80 hover:bg-brandGreen hover:text-black border border-white/20 text-white font-black headline-font text-xs uppercase tracking-wider py-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg flex items-center justify-center gap-2" onclick="openQuickView('RUSTIV URBAN SNAPBACK CAP', 990, 1250, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew', 'High Density Embroidered Cotton')">
-              <span>👁️ QUICK VIEW</span>
-            </button>
-          </div>
-        </div>
-        
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
-          <div>
-            <div class="flex items-center justify-between text-[11px] font-bold text-brandGreen uppercase tracking-wider mb-1">
-              <span>3D EMBROIDERED LOGO</span>
-              <span>⭐ 4.96 (180)</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold headline-font text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandGreen transition-colors">
-              RUSTIV URBAN SNAPBACK CAP
-            </h3>
-            <div class="flex items-baseline space-x-2 mt-2">
-              <span class="text-base sm:text-xl font-black headline-font text-brandGreen">৳990</span>
-              <span class="text-xs text-neutral-500 line-through">৳1,250</span>
-              <span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.5 rounded">SAVE ৳260</span>
-            </div>
-          </div>
-
-          <div class="mt-4 grid grid-cols-2 gap-2">
-            <button class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] transform hover:scale-[1.02]" onclick="handleBuyNow('RUSTIV URBAN SNAPBACK CAP', 990, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew')">
-              BUY NOW
-            </button>
-            <button class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3 rounded-xl transition-all" onclick="handleAddToCart('RUSTIV URBAN SNAPBACK CAP', 990, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew')">
-              + CART
-            </button>
-          </div>
-        </div>
-      </div>
-
     </div>
-
     <!-- View All CTA -->
-    <div class="mt-14 flex justify-center">
-      <a class="px-10 py-4 rounded-full border border-white/20 bg-[#121212] hover:border-brandGreen hover:text-brandGreen text-white font-black text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_30px_rgba(0,255,102,0.3)] flex items-center space-x-3 transform hover:-translate-y-1" href="#hottest-picks">
-        <span>VIEW ALL 2026 DROPS</span>
-        <span class="text-brandGreen text-lg">→</span>
+    <div class="mt-10 flex justify-center">
+      <a class="btn-tactile px-8 py-3.5 rounded-full border border-neutral-700 bg-black hover:border-brandGreen hover:text-brandGreen text-white font-bold text-xs uppercase tracking-wider flex items-center space-x-2"
+        href="#">
+        <span>View All Hottest Picks</span>
+        <span class="text-brandGreen">→</span>
       </a>
     </div>
   </section>
   <!-- END: HottestPicksSection -->
-
   <!-- BEGIN: LookingForSection -->
-  <section class="py-16 md:py-24 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto border-t border-white/10" data-purpose="looking-for-categories">
-    <div class="mb-10 flex flex-col sm:flex-row sm:items-end justify-between">
+  <!-- 5 category cards, larger and more breathing room -->
+  <section class="py-12 md:py-16 px-4 max-w-[1240px] mx-auto border-t border-white/5 reveal"
+    data-purpose="looking-for-categories">
+    <div class="mb-6 md:mb-8 flex flex-col sm:flex-row sm:items-end justify-between">
       <div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black headline-font uppercase tracking-tight text-white">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black headline-font uppercase tracking-tight text-white">
           LOOKING FOR . . .
         </h2>
-        <p class="text-xs sm:text-base text-neutral-400 mt-2 font-medium">
-          Explore signature streetwear cuts designed for everyday urban culture.
+        <p class="text-xs sm:text-sm text-neutral-400 mt-1">
+          Explore curated styles built for everyday urban movement.
         </p>
       </div>
     </div>
-
-    <!-- 5 Cards Responsive Grid: 2 cols on mobile, 3 on sm, 5 on desktop -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-      
+    <!-- Larger cards, 3 per row on desktop, 2 on tablet -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-5 reveal-stagger">
       <!-- Category 1: DROP SHOULDER -->
-      <div class="category-card group relative rounded-2xl overflow-hidden bg-neutral-900 aspect-[3/4] min-h-[300px] sm:min-h-[340px] p-5 flex flex-col justify-end border border-white/10 hover:border-brandGreen transition-all cursor-pointer" onclick="filterByCategory('drop-shoulder')">
-        <img alt="Drop Shoulder Category" class="absolute inset-0 w-full h-full object-cover filter brightness-75 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_Fg766dqPiPop64aEX3UQkKU6pq1ffR56wNNaS8XNl4R4XILPGl6hEkr3y3ixhjz7f-scReTaVopvk4slz78m-Sc6tl8MwabKKxa2DcoWzipRnCYHHs1lKIS_iyDx1DmqZ87VuHA_MhFGZYDvxncT8Q_A67dAO6SxbIljLcdQ39JtwI7voh57BdbyEaiaM5XFng8tOAxiGr7HHEGtqP3IPbERm2aWL4QmOTdI36V1HeiXBPyoMmZDA"/>
+      <div
+        class="category-card group relative rounded-xl overflow-hidden bg-neutral-900 aspect-[4/5] p-5 flex flex-col justify-end border border-white/10 hover:border-brandGreen cursor-pointer"
+        onclick="filterByCategory('drop-shoulder')">
+        <img alt="Drop Shoulder Category" class="absolute inset-0 w-full h-full object-cover filter brightness-70"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_Fg766dqPiPop64aEX3UQkKU6pq1ffR56wNNaS8XNl4R4XILPGl6hEkr3y3ixhjz7f-scReTaVopvk4slz78m-Sc6tl8MwabKKxa2DcoWzipRnCYHHs1lKIS_iyDx1DmqZ87VuHA_MhFGZYDvxncT8Q_A67dAO6SxbIljLcdQ39JtwI7voh57BdbyEaiaM5XFng8tOAxiGr7HHEGtqP3IPbERm2aWL4QmOTdI36V1HeiXBPyoMmZDA" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div class="relative z-10">
-          <span class="text-[10px] text-brandGreen font-black tracking-widest uppercase block mb-1">ICONIC CUT</span>
-          <div class="flex items-center justify-between">
-            <h3 class="text-sm sm:text-base font-black headline-font uppercase text-white leading-tight">DROP SHOULDER</h3>
-            <span class="text-brandGreen text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all">→</span>
+          <span class="text-[10px] text-brandGreen font-black tracking-widest uppercase block">ICONIC</span>
+          <div class="flex items-center justify-between mt-1">
+            <h3 class="text-base sm:text-lg font-black headline-font uppercase text-white leading-tight">DROP SHOULDER
+            </h3>
+            <span
+              class="text-brandGreen text-base opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
           </div>
         </div>
       </div>
-
       <!-- Category 2: BOTTOM WEAR -->
-      <div class="category-card group relative rounded-2xl overflow-hidden bg-neutral-900 aspect-[3/4] min-h-[300px] sm:min-h-[340px] p-5 flex flex-col justify-end border border-white/10 hover:border-brandGreen transition-all cursor-pointer" onclick="filterByCategory('bottoms')">
-        <img alt="Bottom Wear Category" class="absolute inset-0 w-full h-full object-cover filter brightness-75 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng"/>
+      <div
+        class="category-card group relative rounded-xl overflow-hidden bg-neutral-900 aspect-[4/5] p-5 flex flex-col justify-end border border-white/10 hover:border-brandGreen cursor-pointer"
+        onclick="filterByCategory('bottoms')">
+        <img alt="Bottom Wear Category" class="absolute inset-0 w-full h-full object-cover filter brightness-70"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div class="relative z-10">
-          <span class="text-[10px] text-brandGreen font-black tracking-widest uppercase block mb-1">STREET FIT</span>
-          <div class="flex items-center justify-between">
-            <h3 class="text-sm sm:text-base font-black headline-font uppercase text-white leading-tight">BOTTOM WEAR</h3>
-            <span class="text-brandGreen text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all">→</span>
+          <span class="text-[10px] text-brandGreen font-black tracking-widest uppercase block">STREET</span>
+          <div class="flex items-center justify-between mt-1">
+            <h3 class="text-base sm:text-lg font-black headline-font uppercase text-white leading-tight">BOTTOM WEAR
+            </h3>
+            <span
+              class="text-brandGreen text-base opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
           </div>
         </div>
       </div>
-
       <!-- Category 3: CAP -->
-      <div class="category-card group relative rounded-2xl overflow-hidden bg-neutral-900 aspect-[3/4] min-h-[300px] sm:min-h-[340px] p-5 flex flex-col justify-end border border-white/10 hover:border-brandGreen transition-all cursor-pointer" onclick="filterByCategory('caps')">
-        <img alt="Cap Category" class="absolute inset-0 w-full h-full object-cover filter brightness-75 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew"/>
+      <div
+        class="category-card group relative rounded-xl overflow-hidden bg-neutral-900 aspect-[4/5] p-5 flex flex-col justify-end border border-white/10 hover:border-brandGreen cursor-pointer"
+        onclick="filterByCategory('caps')">
+        <img alt="Cap Category" class="absolute inset-0 w-full h-full object-cover filter brightness-70"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div class="relative z-10">
-          <span class="text-[10px] text-brandGreen font-black tracking-widest uppercase block mb-1">HEADWEAR</span>
-          <div class="flex items-center justify-between">
-            <h3 class="text-sm sm:text-base font-black headline-font uppercase text-white leading-tight">CAPS & HATS</h3>
-            <span class="text-brandGreen text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all">→</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Category 4: JERSEY -->
-      <div class="category-card group relative rounded-2xl overflow-hidden bg-neutral-900 aspect-[3/4] min-h-[300px] sm:min-h-[340px] p-5 flex flex-col justify-end border border-white/10 hover:border-brandGreen transition-all cursor-pointer" onclick="filterByCategory('all')">
-        <img alt="Jersey Category" class="absolute inset-0 w-full h-full object-cover filter brightness-75 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdoMYimjHEqxEuicEKyiCsG0Oo0UI38eaTVHRfPX3hS62_WaH3jwFMkN5SOyWEbB69kR_HQhFmnweax9AkK3DB7012HLDqJ2yylBNbkrFUTpt4AKiAszRJidOA68T0Hi80-aM1-RuGbQm5QnmONB8QcXyZjbP8McxmoBdxTjGXg17JAMmUvmfF8E3yxeSNdd1pnewswWQsamCnDfi6zzUK-irGKqvqm8ngcXJB3l_O0nCu6-mhJNvgLg"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-        <div class="relative z-10">
-          <span class="text-[10px] text-brandGreen font-black tracking-widest uppercase block mb-1">ATHLETIC</span>
-          <div class="flex items-center justify-between">
-            <h3 class="text-sm sm:text-base font-black headline-font uppercase text-white leading-tight">JERSEYS</h3>
-            <span class="text-brandGreen text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all">→</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Category 5: TANK TOP -->
-      <div class="category-card group relative rounded-2xl overflow-hidden bg-neutral-900 aspect-[3/4] min-h-[300px] sm:min-h-[340px] p-5 flex flex-col justify-end border border-white/10 hover:border-brandGreen transition-all cursor-pointer col-span-2 sm:col-span-1" onclick="filterByCategory('all')">
-        <img alt="Tank Top Category" class="absolute inset-0 w-full h-full object-cover filter brightness-75 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyyQNITc1NRdCCq2FcYNtYPTQQnO2-ArALQzCggGpRSoUC__1h9OKv0gG9oqiVsMOPGaM4iXGZvJcMtsnF96E1fMJKwLHGoe53ArHoTWmVzavKBmkbbnHYaDjulo_pUyzQu8vf43UsbAsgxGygo8PXU_pVDWZUE4YrnIgU5fQsgyCVHOi96_B7-3l0P1UJmIKFciJ-FICtWcl1UlwWKRWBuNYYmo8EelhaZyHo8-nQqo2NXwpl6AAJUw"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-        <div class="relative z-10">
-          <span class="text-[10px] text-brandGreen font-black tracking-widest uppercase block mb-1">SUMMER ESSENTIAL</span>
-          <div class="flex items-center justify-between">
-            <h3 class="text-sm sm:text-base font-black headline-font uppercase text-white leading-tight">TANK TOPS</h3>
-            <span class="text-brandGreen text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all">→</span>
+          <span class="text-[10px] text-brandGreen font-black tracking-widest uppercase block">HEADWEAR</span>
+          <div class="flex items-center justify-between mt-1">
+            <h3 class="text-base sm:text-lg font-black headline-font uppercase text-white leading-tight">CAP</h3>
+            <span
+              class="text-brandGreen text-base opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
           </div>
         </div>
       </div>
@@ -889,209 +707,525 @@
   </section>
   <!-- END: LookingForSection -->
 
-  <!-- BEGIN: Pride Customers Section -->
-  <section class="py-16 md:py-24 px-4 max-w-[1440px] mx-auto border-t border-white/10 overflow-hidden" data-purpose="pride-customers">
-    <!-- Header -->
-    <div class="mb-10 px-4 sm:px-6">
-      <div class="flex items-center gap-3">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black headline-font uppercase tracking-tight text-white">
-          PRIDE CUSTOMERS
-        </h2>
-        <span class="text-3xl sm:text-4xl">🔥</span>
+  <!-- Pride Customers Section -->
+  <section class="py-14 md:py-20 px-4 max-w-[1400px] mx-auto border-t border-white/5 overflow-hidden reveal"
+    data-purpose="pride-customers">
+    <div class="mb-8">
+      <div class="flex items-center gap-2">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black headline-font uppercase tracking-tight text-white">PRIDE
+          CUSTOMERS</h2>
+        <span class="text-2xl md:text-3xl">🔥</span>
       </div>
-      <p class="text-xs sm:text-base text-neutral-400 mt-2 font-medium">
+      <p class="text-xs sm:text-sm text-neutral-400 mt-1">
         <strong class="text-brandGreen uppercase">RUSTIV ON YOU.</strong>
-        Tag <span class="text-white font-bold">@rustivwear</span> on Instagram to get featured in our global community feed.
+        Tag
+        <span class="text-white font-semibold">@rustivwear</span>
+        on Instagram to get featured in our community feed.
       </p>
     </div>
-
-    <!-- Infinite Auto Slider -->
     <div class="customer-marquee">
       <div class="customer-track">
-        <!-- SET 1 -->
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkM-xZQSfrBqnzIK0JCngmNlZmgGEdqxGc9C56jWaO0Je2gb_uBR-Q7KaopuaM-HKTa5-bxwteYQ5NzARs6a2uQieRIdlNwxB-luZVPQU01KMk-JAuR-s4siQhKToZnskXcGv0qbOjYDMDD-2Huwl-pstLow3N6quJ9LhwkuzsAZ6cPhLpwMKu219q_vJSuKdaOSjC9Vsj6-ee0DZ5VXiGQroX6TcxcQrrhCkjTSDk5t5X82Kc959V3g" alt="Customer styling RUSTIV"/><span>@rustivwear #01</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyyQNITc1NRdCCq2FcYNtYPTQQnO2-ArALQzCggGpRSoUC__1h9OKv0gG9oqiVsMOPGaM4iXGZvJcMtsnF96E1fMJKwLHGoe53ArHoTWmVzavKBmkbbnHYaDjulo_pUyzQu8vf43UsbAsgxGygo8PXU_pVDWZUE4YrnIgU5fQsgyCVHOi96_B7-3l0P1UJmIKFciJ-FICtWcl1UlwWKRWBuNYYmo8EelhaZyHo8-nQqo2NXwpl6AAJUw" alt="Customer styling RUSTIV"/><span>@rustivwear #02</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ" alt="Customer styling RUSTIV"/><span>@rustivwear #03</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzNHBaGbYURKvECBT7vXBaZMArtEXoNakmcAFCaTKlpre7KRX7Ly8c29NXru8pfGOgIH3bMTXHUN6cqgR7rre1ZVlB_8Oawdmk6ANvM4u9_neczG7h3QmQ5fcdGJJpq-qwy_IkuklXY3IxLKSzhfsBAVQMdg1iNqWQQx2TyNWEjPHEFMBN-N3_mzp-4Y8IKFNsx_xzs4Tf2wxwHsuAZyLQq7tfB4tpZplYZhLxZRwQrvEdA5D2I9OeAw" alt="Customer styling RUSTIV"/><span>@rustivwear #04</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmxcr0Yv4xIUlJXNzDtdgvTtcRuvbJw6cdw9U6EO0J5cRcSqaQzZJ8E4Gi0cWs8t8Cy5_axjZOZB1NJgJuxFskky8i0uNqsvGX1ehAaNoUqrRwWk7m2kkqyuUuqKPmk-NXT0SoKOYFeapUH9MhAibXs9ZePibH5flkFHHuozqteZ80QCaae36W3sGVqCgMD-7pLaeeOREkkruRpKn7__kZvWswH8rvIRpcYhhWMZ6KIRew_yo5TL95Ng" alt="Customer styling RUSTIV"/><span>@rustivwear #05</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA" alt="Customer styling RUSTIV"/><span>@rustivwear #06</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEty32-VA0hOg09Ngodm4tSAskgiu4W0dOVgmD4mv8vFapR-wXQyFbw7-nm8BVv9vbXJyMybndsg0PiORph9fWDr8E7UY93TvZw5bD5rvZHRII6lB1yw35x7eXrfsCKearv4brDWRIIaMkjELbekcin5UfcMTTt9RvM1bV8pPMf07dPjD5iK4b719Do5rX8hwVci9k1UykUzPidu7saQwMRPLNEH3UvI8Z40guAUFVj9eWaDUf3UlRAw" alt="Customer styling RUSTIV"/><span>@rustivwear #07</span></div>
-        
-        <!-- DUPLICATE SET -->
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkM-xZQSfrBqnzIK0JCngmNlZmgGEdqxGc9C56jWaO0Je2gb_uBR-Q7KaopuaM-HKTa5-bxwteYQ5NzARs6a2uQieRIdlNwxB-luZVPQU01KMk-JAuR-s4siQhKToZnskXcGv0qbOjYDMDD-2Huwl-pstLow3N6quJ9LhwkuzsAZ6cPhLpwMKu219q_vJSuKdaOSjC9Vsj6-ee0DZ5VXiGQroX6TcxcQrrhCkjTSDk5t5X82Kc959V3g" alt="Customer styling RUSTIV"/><span>@rustivwear #01</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyyQNITc1NRdCCq2FcYNtYPTQQnO2-ArALQzCggGpRSoUC__1h9OKv0gG9oqiVsMOPGaM4iXGZvJcMtsnF96E1fMJKwLHGoe53ArHoTWmVzavKBmkbbnHYaDjulo_pUyzQu8vf43UsbAsgxGygo8PXU_pVDWZUE4YrnIgU5fQsgyCVHOi96_B7-3l0P1UJmIKFciJ-FICtWcl1UlwWKRWBuNYYmo8EelhaZyHo8-nQqo2NXwpl6AAJUw" alt="Customer styling RUSTIV"/><span>@rustivwear #02</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ" alt="Customer styling RUSTIV"/><span>@rustivwear #03</span></div>
-        <div class="customer-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzNHBaGbYURKvECBT7vXBaZMArtEXoNakmcAFCaTKlpre7KRX7Ly8c29NXru8pfGOgIH3bMTXHUN6cqgR7rre1ZVlB_8Oawdmk6ANvM4u9_neczG7h3QmQ5fcdGJJpq-qwy_IkuklXY3IxLKSzhfsBAVQMdg1iNqWQQx2TyNWEjPHEFMBN-N3_mzp-4Y8IKFNsx_xzs4Tf2wxwHsuAZyLQq7tfB4tpZplYZhLxZRwQrvEdA5D2I9OeAw" alt="Customer styling RUSTIV"/><span>@rustivwear #04</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkM-xZQSfrBqnzIK0JCngmNlZmgGEdqxGc9C56jWaO0Je2gb_uBR-Q7KaopuaM-HKTa5-bxwteYQ5NzARs6a2uQieRIdlNwxB-luZVPQU01KMk-JAuR-s4siQhKToZnskXcGv0qbOjYDMDD-2Huwl-pstLow3N6quJ9LhwkuzsAZ6cPhLpwMKu219q_vJSuKdaOSjC9Vsj6-ee0DZ5VXiGQroX6TcxcQrrhCkjTSDk5t5X82Kc959V3g" /><span>@rustivwear
+            #01</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyyQNITc1NRdCCq2FcYNtYPTQQnO2-ArALQzCggGpRSoUC__1h9OKv0gG9oqiVsMOPGaM4iXGZvJcMtsnF96E1fMJKwLHGoe53ArHoTWmVzavKBmkbbnHYaDjulo_pUyzQu8vf43UsbAsgxGygo8PXU_pVDWZUE4YrnIgU5fQsgyCVHOi96_B7-3l0P1UJmIKFciJ-FICtWcl1UlwWKRWBuNYYmo8EelhaZyHo8-nQqo2NXwpl6AAJUw" /><span>@rustivwear
+            #02</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ" /><span>@rustivwear
+            #03</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzNHBaGbYURKvECBT7vXBaZMArtEXoNakmcAFCaTKlpre7KRX7Ly8c29NXru8pfGOgIH3bMTXHUN6cqgR7rre1ZVlB_8Oawdmk6ANvM4u9_neczG7h3QmQ5fcdGJJpq-qwy_IkuklXY3IxLKSzhfsBAVQMdg1iNqWQQx2TyNWEjPHEFMBN-N3_mzp-4Y8IKFNsx_xzs4Tf2wxwHsuAZyLQq7tfB4tpZplYZhLxZRwQrvEdA5D2I9OeAw" /><span>@rustivwear
+            #04</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmxcr0Yv4xIUlJXNzDtdgvTtcRuvbJw6cdw9U6EO0J5cRcSqaQzZJ8E4Gi0cWs8t8Cy5_axjZOZB1NJgJuxFskky8i0uNqsvGX1ehAaNoUqrRwWk7m2kkqyuUuqKPmk-NXT0SoKOYFeapUH9MhAibXs9ZePibH5flkFHHuozqteZ80QCaae36W3sGVqCgMD-7pLaeeOREkkruRpKn7__kZvWswH8rvIRpcYhhWMZ6KIRew_yo5TL95Ng" /><span>@rustivwear
+            #05</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA" /><span>@rustivwear
+            #06</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEty32-VA0hOg09Ngodm4tSAskgiu4W0dOVgmD4mv8vFapR-wXQyFbw7-nm8BVv9vbXJyMybndsg0PiORph9fWDr8E7UY93TvZw5bD5rvZHRII6lB1yw35x7eXrfsCKearv4brDWRIIaMkjELbekcin5UfcMTTt9RvM1bV8pPMf07dPjD5iK4b719Do5rX8hwVci9k1UykUzPidu7saQwMRPLNEH3UvI8Z40guAUFVj9eWaDUf3UlRAw" /><span>@rustivwear
+            #07</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew" /><span>@rustivwear
+            #08</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_Fg766dqPiPop64aEX3UQkKU6pq1ffR56wNNaS8XNl4R4XILPGl6hEkr3y3ixhjz7f-scReTaVopvk4slz78m-Sc6tl8MwabKKxa2DcoWzipRnCYHHs1lKIS_iyDx1DmqZ87VuHA_MhFGZYDvxncT8Q_A67dAO6SxbIljLcdQ39JtwI7voh57BdbyEaiaM5XFng8tOAxiGr7HHEGtqP3IPbERm2aWL4QmOTdI36V1HeiXBPyoMmZDA" /><span>@rustivwear
+            #09</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA" /><span>@rustivwear
+            #10</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkM-xZQSfrBqnzIK0JCngmNlZmgGEdqxGc9C56jWaO0Je2gb_uBR-Q7KaopuaM-HKTa5-bxwteYQ5NzARs6a2uQieRIdlNwxB-luZVPQU01KMk-JAuR-s4siQhKToZnskXcGv0qbOjYDMDD-2Huwl-pstLow3N6quJ9LhwkuzsAZ6cPhLpwMKu219q_vJSuKdaOSjC9Vsj6-ee0DZ5VXiGQroX6TcxcQrrhCkjTSDk5t5X82Kc959V3g" /><span>@rustivwear
+            #01</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyyQNITc1NRdCCq2FcYNtYPTQQnO2-ArALQzCggGpRSoUC__1h9OKv0gG9oqiVsMOPGaM4iXGZvJcMtsnF96E1fMJKwLHGoe53ArHoTWmVzavKBmkbbnHYaDjulo_pUyzQu8vf43UsbAsgxGygo8PXU_pVDWZUE4YrnIgU5fQsgyCVHOi96_B7-3l0P1UJmIKFciJ-FICtWcl1UlwWKRWBuNYYmo8EelhaZyHo8-nQqo2NXwpl6AAJUw" /><span>@rustivwear
+            #02</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ" /><span>@rustivwear
+            #03</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzNHBaGbYURKvECBT7vXBaZMArtEXoNakmcAFCaTKlpre7KRX7Ly8c29NXru8pfGOgIH3bMTXHUN6cqgR7rre1ZVlB_8Oawdmk6ANvM4u9_neczG7h3QmQ5fcdGJJpq-qwy_IkuklXY3IxLKSzhfsBAVQMdg1iNqWQQx2TyNWEjPHEFMBN-N3_mzp-4Y8IKFNsx_xzs4Tf2wxwHsuAZyLQq7tfB4tpZplYZhLxZRwQrvEdA5D2I9OeAw" /><span>@rustivwear
+            #04</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmxcr0Yv4xIUlJXNzDtdgvTtcRuvbJw6cdw9U6EO0J5cRcSqaQzZJ8E4Gi0cWs8t8Cy5_axjZOZB1NJgJuxFskky8i0uNqsvGX1ehAaNoUqrRwWk7m2kkqyuUuqKPmk-NXT0SoKOYFeapUH9MhAibXs9ZePibH5flkFHHuozqteZ80QCaae36W3sGVqCgMD-7pLaeeOREkkruRpKn7__kZvWswH8rvIRpcYhhWMZ6KIRew_yo5TL95Ng" /><span>@rustivwear
+            #05</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA" /><span>@rustivwear
+            #06</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEty32-VA0hOg09Ngodm4tSAskgiu4W0dOVgmD4mv8vFapR-wXQyFbw7-nm8BVv9vbXJyMybndsg0PiORph9fWDr8E7UY93TvZw5bD5rvZHRII6lB1yw35x7eXrfsCKearv4brDWRIIaMkjELbekcin5UfcMTTt9RvM1bV8pPMf07dPjD5iK4b719Do5rX8hwVci9k1UykUzPidu7saQwMRPLNEH3UvI8Z40guAUFVj9eWaDUf3UlRAw" /><span>@rustivwear
+            #07</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew" /><span>@rustivwear
+            #08</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_Fg766dqPiPop64aEX3UQkKU6pq1ffR56wNNaS8XNl4R4XILPGl6hEkr3y3ixhjz7f-scReTaVopvk4slz78m-Sc6tl8MwabKKxa2DcoWzipRnCYHHs1lKIS_iyDx1DmqZ87VuHA_MhFGZYDvxncT8Q_A67dAO6SxbIljLcdQ39JtwI7voh57BdbyEaiaM5XFng8tOAxiGr7HHEGtqP3IPbERm2aWL4QmOTdI36V1HeiXBPyoMmZDA" /><span>@rustivwear
+            #09</span></div>
+        <div class="customer-card"><img alt="Customer styling RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA" /><span>@rustivwear
+            #10</span></div>
       </div>
     </div>
   </section>
-  <!-- END: Pride Customers Section -->
+
+  <style>
+    .customer-marquee {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .customer-track {
+      display: flex;
+      width: max-content;
+      gap: 16px;
+      animation: customer-scroll 35s linear infinite;
+    }
+
+    .customer-card {
+      position: relative;
+      flex: 0 0 auto;
+      width: 260px;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #171717;
+      border: 1px solid #262626;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .customer-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .customer-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .customer-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .customer-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 55%);
+      pointer-events: none;
+    }
+
+    .customer-card span {
+      position: absolute;
+      z-index: 2;
+      bottom: 12px;
+      left: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #d4d4d4;
+    }
+
+    @keyframes customer-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 8px));
+      }
+    }
+
+    .customer-marquee:hover .customer-track {
+      animation-play-state: paused;
+    }
+
+    @media (min-width: 768px) {
+      .customer-card {
+        width: 300px;
+      }
+
+      .customer-track {
+        gap: 20px;
+        animation-duration: 42s;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .customer-card {
+        width: 320px;
+      }
+
+      .customer-track {
+        animation-duration: 48s;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .customer-card {
+        width: 230px;
+      }
+
+      .customer-track {
+        gap: 12px;
+        animation-duration: 30s;
+      }
+    }
+  </style>
 
   <!-- BEGIN: OfficialClubCallout -->
-  <section class="py-20 md:py-28 px-4 bg-gradient-to-b from-black via-[#080808] to-black border-y border-white/10 text-center relative overflow-hidden" data-purpose="club-callout">
-    <div class="max-w-[950px] mx-auto relative z-10">
-      <span class="text-brandGreen text-xs md:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full bg-brandGreen/10 border border-brandGreen/30 inline-block mb-3">THE INNER CIRCLE</span>
-      <h2 class="text-3xl sm:text-5xl md:text-6xl font-black headline-font tracking-tight uppercase mt-3 text-white leading-tight">
-        JOIN THE <span class="text-[#00FF66] drop-shadow-[0_0_20px_#00FF66]">RUSTIV OFFICIAL</span> CLUB
+  <section
+    class="py-16 md:py-24 px-4 bg-gradient-to-b from-black via-[#070707] to-black border-y border-white/5 text-center reveal"
+    data-purpose="club-callout">
+    <div class="max-w-[850px] mx-auto">
+      <span class="text-brandGreen text-xs font-black tracking-widest uppercase">THE INNER CIRCLE</span>
+      <h2 class="text-2xl sm:text-3xl md:text-5xl font-black headline-font tracking-tight uppercase mt-2">
+        JOIN THE <span class="text-[#00FF66]">RUSTIV OFFICIAL</span> CLUB
       </h2>
-      <p class="mt-6 text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed font-medium max-w-3xl mx-auto">
-        Who says clothes should follow ordinary rules? Streetwear is raw self-expression and subculture defiance. 
-        <strong class="text-white font-bold">RUSTIV</strong> engineers heavy-grade streetwear radiating bold individuality, heavy silhouettes, and raw energy.
+      <p
+        class="mt-6 text-xs sm:text-sm md:text-base text-neutral-300 leading-relaxed md:leading-loose font-medium max-w-2xl mx-auto">
+        Who says clothes should follow ordinary guidelines? Streetwear is raw expression and defiance.
+        <strong class="text-white font-semibold">RUSTIV</strong> creates heavy-grade garments radiating individuality,
+        unapologetic cuts, and underground subculture aesthetics. Embrace boldness—life is too short for vanilla basics.
       </p>
-      <div class="mt-8 font-black text-brandGreen uppercase tracking-widest text-xs sm:text-sm md:text-base">
-        ⚡ YOU ARE NOW ENTERING THE NEW FRONTIER OF BANGLADESH STREETWEAR
+      <div class="mt-4 font-black text-brandGreen uppercase tracking-wider text-xs md:text-sm">
+        YOU ARE NOW ENTERING THE NEW FRONTIER OF BANGLADESH STREETWEAR
       </div>
     </div>
   </section>
   <!-- END: OfficialClubCallout -->
 
   <!-- BEGIN: CelebritiesSection -->
-  <section class="py-16 md:py-24 px-4 max-w-[1440px] mx-auto overflow-hidden" data-purpose="celebrities-section">
-    <!-- Header -->
-    <div class="mb-10 px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black headline-font uppercase tracking-tight text-white">
-        WORN BY YOUR FAVORITE CELEBRITIES
-      </h2>
-      <p class="text-xs sm:text-base text-neutral-400 mt-2 font-medium">
-        <strong class="text-brandGreen">RUSTIV IN THE WILD.</strong>
-        Worn by top artists, creators, skaters, and underground icons across Bangladesh.
+  <section class="py-14 md:py-20 px-4 max-w-[1400px] mx-auto overflow-hidden reveal" data-purpose="celebrities-section">
+    <div class="mb-8">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black headline-font uppercase tracking-tight text-white">WORN BY
+        YOUR FAVORITE CELEBRITIES</h2>
+      <p class="text-xs sm:text-sm text-neutral-400 mt-1">
+        <strong class="text-brandGreen">RUSTIV LOOKS IN THE WILD.</strong>
+        Worn by top artists, creators, and underground icons across Bangladesh.
       </p>
     </div>
-
-    <!-- Infinite Auto Slider -->
     <div class="celeb-marquee">
       <div class="celeb-track">
-        <!-- SET 1 -->
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZUPxhAmmqbc0vZO4AzwPnAhN60JMQxb7a9VqywDgChiVjE10GZpmF3a5ZL_k9aafqSBEozKlrt0dxMNfzzDtVGTJ9VsTjB0ZvwKRD-ZzoFsZ9farFsSUMMbKi_nsxaccetn_PN_-KN3-6p2TQsM07MDJTbXM_d4FRkxhEX4Cg2JOu_kfRGiJdXprMmAvjfTaQoirjjM3Sh-yrJCzpMyPEzLlbpkAAivOntrv7gEOEE6h2tuPPjCpVmQ" alt="Tanvir in RUSTIV"/><span>@iam_tanvir</span></div>
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnQ9zu7cy353q8rech4XDTHbTK7ARBlD2gbDlYI1l78XJYgpWAX1icUJWM7wcLpqXbn4itDcGlEqwZvht1BeABMclHvCy08nsW2g_rCVtD7woyWP1FS2hrg86SkEkeGfUGMMrwK478miODPagCJQtY_9qWy21MleHWiyIyJD09CJfULqn4vsItcn2VL1KoXK0jGE0OHR1G-PFS-dyCJP726cSF7ngovXqmBosLEcP1u0KKqnoy_pWIGA" alt="Rafi Bhaiya in RUSTIV"/><span>@rafibhaiya</span></div>
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuABswa6Mv9OLlJ3w4a9tV_mBMyvLnc1K9i1p4PRWehbWZCnnJeYOjg3IVYjwjU1h82JhM1zTVhjoRYIQq52TExhj2oV_GwObrAoD9y6n5A5zHqzJnPyZ2Q5utYEEV2hZQCkJd6xFTYjxNAzc5nFb5khliMtXrlf77O-5sqTJv8PHG15LO1a4ppvQbey5pFWvsO_W1FNtm8qp6tTMndn0AJcBDD9AUac62nAz5sNOwf8JZivmGmQDASYDg" alt="Critical Mahmood in RUSTIV"/><span>@criticalmahmood</span></div>
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVQkoJiCNfYspHy70mFM7e2Tn5xzSN5d7xwWhWAPzAbbRfa6yRsxxTCFIq6bTCGeLT4lBK7_WtbFCcNOyGPcHK9B6yMEuUyDp0oIWL0P0cXYTPW960DVOegzwVoPdp4iRtLqM9IF4fRrAx3_0jJ-nz0TCiS-x3PVSAwUhs4OEQOEERvyz0jkcIdaqQs5C5kTQc_AvhgHM4zrzh6wU41btxKQ_oUcKu-LP30itauSgpRZ0jMJlA-GQGng" alt="cfu36 in RUSTIV"/><span>@cfu36</span></div>
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkPuVYw9lldmNicUIuo-nWXdvEfER792QnWMwdBAklMurCujSf-LmJrLYX5m1n11pWriTO7ZxEUKOc6YgV_lFFm7J1SpHeTymhBbjQA-1r4flXieyagwxZmoWP7O0gNoZJxKcw_nAjV3qiEhbm2aFkWb8Dst12su5KzcmJBhC8h4-lIqVznxqcf8_OyvSpgab0lRUC9jpCOwyAQ2ctexhPXFlKoaJWjewmiEDSQuiDElmNRQpPljlGgg" alt="Nayla in RUSTIV"/><span>@nayla_street</span></div>
-        
-        <!-- DUPLICATE SET -->
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZUPxhAmmqbc0vZO4AzwPnAhN60JMQxb7a9VqywDgChiVjE10GZpmF3a5ZL_k9aafqSBEozKlrt0dxMNfzzDtVGTJ9VsTjB0ZvwKRD-ZzoFsZ9farFsSUMMbKi_nsxaccetn_PN_-KN3-6p2TQsM07MDJTbXM_d4FRkxhEX4Cg2JOu_kfRGiJdXprMmAvjfTaQoirjjM3Sh-yrJCzpMyPEzLlbpkAAivOntrv7gEOEE6h2tuPPjCpVmQ" alt="Tanvir in RUSTIV"/><span>@iam_tanvir</span></div>
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnQ9zu7cy353q8rech4XDTHbTK7ARBlD2gbDlYI1l78XJYgpWAX1icUJWM7wcLpqXbn4itDcGlEqwZvht1BeABMclHvCy08nsW2g_rCVtD7woyWP1FS2hrg86SkEkeGfUGMMrwK478miODPagCJQtY_9qWy21MleHWiyIyJD09CJfULqn4vsItcn2VL1KoXK0jGE0OHR1G-PFS-dyCJP726cSF7ngovXqmBosLEcP1u0KKqnoy_pWIGA" alt="Rafi Bhaiya in RUSTIV"/><span>@rafibhaiya</span></div>
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuABswa6Mv9OLlJ3w4a9tV_mBMyvLnc1K9i1p4PRWehbWZCnnJeYOjg3IVYjwjU1h82JhM1zTVhjoRYIQq52TExhj2oV_GwObrAoD9y6n5A5zHqzJnPyZ2Q5utYEEV2hZQCkJd6xFTYjxNAzc5nFb5khliMtXrlf77O-5sqTJv8PHG15LO1a4ppvQbey5pFWvsO_W1FNtm8qp6tTMndn0AJcBDD9AUac62nAz5sNOwf8JZivmGmQDASYDg" alt="Critical Mahmood in RUSTIV"/><span>@criticalmahmood</span></div>
-        <div class="celeb-card"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVQkoJiCNfYspHy70mFM7e2Tn5xzSN5d7xwWhWAPzAbbRfa6yRsxxTCFIq6bTCGeLT4lBK7_WtbFCcNOyGPcHK9B6yMEuUyDp0oIWL0P0cXYTPW960DVOegzwVoPdp4iRtLqM9IF4fRrAx3_0jJ-nz0TCiS-x3PVSAwUhs4OEQOEERvyz0jkcIdaqQs5C5kTQc_AvhgHM4zrzh6wU41btxKQ_oUcKu-LP30itauSgpRZ0jMJlA-GQGng" alt="cfu36 in RUSTIV"/><span>@cfu36</span></div>
+        <div class="celeb-card"><img alt="Tanvir in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZUPxhAmmqbc0vZO4AzwPnAhN60JMQxb7a9VqywDgChiVjE10GZpmF3a5ZL_k9aafqSBEozKlrt0dxMNfzzDtVGTJ9VsTjB0ZvwKRD-ZzoFsZ9farFsSUMMbKi_nsxaccetn_PN_-KN3-6p2TQsM07MDJTbXM_d4FRkxhEX4Cg2JOu_kfRGiJdXprMmAvjfTaQoirjjM3Sh-yrJCzpMyPEzLlbpkAAivOntrv7gEOEE6h2tuPPjCpVmQ" /><span>@iam_tanvir</span>
+        </div>
+        <div class="celeb-card"><img alt="Rafi Bhaiya in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnQ9zu7cy353q8rech4XDTHbTK7ARBlD2gbDlYI1l78XJYgpWAX1icUJWM7wcLpqXbn4itDcGlEqwZvht1BeABMclHvCy08nsW2g_rCVtD7woyWP1FS2hrg86SkEkeGfUGMMrwK478miODPagCJQtY_9qWy21MleHWiyIyJD09CJfULqn4vsItcn2VL1KoXK0jGE0OHR1G-PFS-dyCJP726cSF7ngovXqmBosLEcP1u0KKqnoy_pWIGA" /><span>@rafibhaiya</span>
+        </div>
+        <div class="celeb-card"><img alt="Critical Mahmood in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuABswa6Mv9OLlJ3w4a9tV_mBMyvLnc1K9i1p4PRWehbWZCnnJeYOjg3IVYjwjU1h82JhM1zTVhjoRYIQq52TExhj2oV_GwObrAoD9y6n5A5zHqzJnPyZ2Q5utYEEV2hZQCkJd6xFTYjxNAzc5nFb5khliMtXrlf77O-5sqTJv8PHG15LO1a4ppvQbey5pFWvsO_W1FNtm8qp6tTMndn0AJcBDD9AUac62nAz5sNOwf8JZivmGmQDASYDg" /><span>@criticalmahmood</span>
+        </div>
+        <div class="celeb-card"><img alt="cfu36 in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVQkoJiCNfYspHy70mFM7e2Tn5xzSN5d7xwWhWAPzAbbRfa6yRsxxTCFIq6bTCGeLT4lBK7_WtbFCcNOyGPcHK9B6yMEuUyDp0oIWL0P0cXYTPW960DVOegzwVoPdp4iRtLqM9IF4fRrAx3_0jJ-nz0TCiS-x3PVSAwUhs4OEQOEERvyz0jkcIdaqQs5C5kTQc_AvhgHM4zrzh6wU41btxKQ_oUcKu-LP30itauSgpRZ0jMJlA-GQGng" /><span>@cfu36</span>
+        </div>
+        <div class="celeb-card"><img alt="Nayla in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkPuVYw9lldmNicUIuo-nWXdvEfER792QnWMwdBAklMurCujSf-LmJrLYX5m1n11pWriTO7ZxEUKOc6YgV_lFFm7J1SpHeTymhBbjQA-1r4flXieyagwxZmoWP7O0gNoZJxKcw_nAjV3qiEhbm2aFkWb8Dst12su5KzcmJBhC8h4-lIqVznxqcf8_OyvSpgab0lRUC9jpCOwyAQ2ctexhPXFlKoaJWjewmiEDSQuiDElmNRQpPljlGgg" /><span>@nayla_street</span>
+        </div>
+        <div class="celeb-card"><img alt="RUSTIV Studio VIP"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA" /><span>@rustiv_rider</span>
+        </div>
+        <div class="celeb-card"><img alt="Street Artist in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA" /><span>@zahid_beats</span>
+        </div>
+        <div class="celeb-card"><img alt="Musician in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA" /><span>@samir_dhaka</span>
+        </div>
+        <div class="celeb-card"><img alt="Underground DJ"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLVPBD_sXFgFpCP-ori_YY_jKfNfvGsxG_LzB7mcnmRvhwU1BUom7FK3OsJnKZtJvr9oQ-x1jCYva70x9bGLTMFONvKl6MCqToFABKG58zdfv7UAkhWalf83LNdbCOmbssoGN-omYLHJ-ssLyMR30i6-O3YXaIn7szMPMMzL5Hp_-6FvuLYVnFGmNGonpGq0HjexoZJsLsjh7buF9PNU3SaGeunnHyu9s4P5pFJmbeI9kmbZAUTR-_jA" /><span>@dj_noman</span>
+        </div>
+        <div class="celeb-card"><img alt="Skater in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEty32-VA0hOg09Ngodm4tSAskgiu4W0dOVgmD4mv8vFapR-wXQyFbw7-nm8BVv9vbXJyMybndsg0PiORph9fWDr8E7UY93TvZw5bD5rvZHRII6lB1yw35x7eXrfsCKearv4brDWRIIaMkjELbekcin5UfcMTTt9RvM1bV8pPMf07dPjD5iK4b719Do5rX8hwVci9k1UykUzPidu7saQwMRPLNEH3UvI8Z40guAUFVj9eWaDUf3UlRAw" /><span>@dhaka_skater</span>
+        </div>
+        <div class="celeb-card"><img alt="Fashion Model in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew" /><span>@farah_mode</span>
+        </div>
+        <div class="celeb-card"><img alt="Producer in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_Fg766dqPiPop64aEX3UQkKU6pq1ffR56wNNaS8XNl4R4XILPGl6hEkr3y3ixhjz7f-scReTaVopvk4slz78m-Sc6tl8MwabKKxa2DcoWzipRnCYHHs1lKIS_iyDx1DmqZ87VuHA_MhFGZYDvxncT8Q_A67dAO6SxbIljLcdQ39JtwI7voh57BdbyEaiaM5XFng8tOAxiGr7HHEGtqP3IPbERm2aWL4QmOTdI36V1HeiXBPyoMmZDA" /><span>@prod_zico</span>
+        </div>
+        <div class="celeb-card"><img alt="Tanvir in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZUPxhAmmqbc0vZO4AzwPnAhN60JMQxb7a9VqywDgChiVjE10GZpmF3a5ZL_k9aafqSBEozKlrt0dxMNfzzDtVGTJ9VsTjB0ZvwKRD-ZzoFsZ9farFsSUMMbKi_nsxaccetn_PN_-KN3-6p2TQsM07MDJTbXM_d4FRkxhEX4Cg2JOu_kfRGiJdXprMmAvjfTaQoirjjM3Sh-yrJCzpMyPEzLlbpkAAivOntrv7gEOEE6h2tuPPjCpVmQ" /><span>@iam_tanvir</span>
+        </div>
+        <div class="celeb-card"><img alt="Rafi Bhaiya in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnQ9zu7cy353q8rech4XDTHbTK7ARBlD2gbDlYI1l78XJYgpWAX1icUJWM7wcLpqXbn4itDcGlEqwZvht1BeABMclHvCy08nsW2g_rCVtD7woyWP1FS2hrg86SkEkeGfUGMMrwK478miODPagCJQtY_9qWy21MleHWiyIyJD09CJfULqn4vsItcn2VL1KoXK0jGE0OHR1G-PFS-dyCJP726cSF7ngovXqmBosLEcP1u0KKqnoy_pWIGA" /><span>@rafibhaiya</span>
+        </div>
+        <div class="celeb-card"><img alt="Critical Mahmood in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuABswa6Mv9OLlJ3w4a9tV_mBMyvLnc1K9i1p4PRWehbWZCnnJeYOjg3IVYjwjU1h82JhM1zTVhjoRYIQq52TExhj2oV_GwObrAoD9y6n5A5zHqzJnPyZ2Q5utYEEV2hZQCkJd6xFTYjxNAzc5nFb5khliMtXrlf77O-5sqTJv8PHG15LO1a4ppvQbey5pFWvsO_W1FNtm8qp6tTMndn0AJcBDD9AUac62nAz5sNOwf8JZivmGmQDASYDg" /><span>@criticalmahmood</span>
+        </div>
+        <div class="celeb-card"><img alt="cfu36 in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVQkoJiCNfYspHy70mFM7e2Tn5xzSN5d7xwWhWAPzAbbRfa6yRsxxTCFIq6bTCGeLT4lBK7_WtbFCcNOyGPcHK9B6yMEuUyDp0oIWL0P0cXYTPW960DVOegzwVoPdp4iRtLqM9IF4fRrAx3_0jJ-nz0TCiS-x3PVSAwUhs4OEQOEERvyz0jkcIdaqQs5C5kTQc_AvhgHM4zrzh6wU41btxKQ_oUcKu-LP30itauSgpRZ0jMJlA-GQGng" /><span>@cfu36</span>
+        </div>
+        <div class="celeb-card"><img alt="Nayla in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkPuVYw9lldmNicUIuo-nWXdvEfER792QnWMwdBAklMurCujSf-LmJrLYX5m1n11pWriTO7ZxEUKOc6YgV_lFFm7J1SpHeTymhBbjQA-1r4flXieyagwxZmoWP7O0gNoZJxKcw_nAjV3qiEhbm2aFkWb8Dst12su5KzcmJBhC8h4-lIqVznxqcf8_OyvSpgab0lRUC9jpCOwyAQ2ctexhPXFlKoaJWjewmiEDSQuiDElmNRQpPljlGgg" /><span>@nayla_street</span>
+        </div>
+        <div class="celeb-card"><img alt="RUSTIV Studio VIP"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA" /><span>@rustiv_rider</span>
+        </div>
+        <div class="celeb-card"><img alt="Street Artist in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA" /><span>@zahid_beats</span>
+        </div>
+        <div class="celeb-card"><img alt="Musician in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA" /><span>@samir_dhaka</span>
+        </div>
+        <div class="celeb-card"><img alt="Underground DJ"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLVPBD_sXFgFpCP-ori_YY_jKfNfvGsxG_LzB7mcnmRvhwU1BUom7FK3OsJnKZtJvr9oQ-x1jCYva70x9bGLTMFONvKl6MCqToFABKG58zdfv7UAkhWalf83LNdbCOmbssoGN-omYLHJ-ssLyMR30i6-O3YXaIn7szMPMMzL5Hp_-6FvuLYVnFGmNGonpGq0HjexoZJsLsjh7buF9PNU3SaGeunnHyu9s4P5pFJmbeI9kmbZAUTR-_jA" /><span>@dj_noman</span>
+        </div>
+        <div class="celeb-card"><img alt="Skater in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEty32-VA0hOg09Ngodm4tSAskgiu4W0dOVgmD4mv8vFapR-wXQyFbw7-nm8BVv9vbXJyMybndsg0PiORph9fWDr8E7UY93TvZw5bD5rvZHRII6lB1yw35x7eXrfsCKearv4brDWRIIaMkjELbekcin5UfcMTTt9RvM1bV8pPMf07dPjD5iK4b719Do5rX8hwVci9k1UykUzPidu7saQwMRPLNEH3UvI8Z40guAUFVj9eWaDUf3UlRAw" /><span>@dhaka_skater</span>
+        </div>
+        <div class="celeb-card"><img alt="Fashion Model in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew" /><span>@farah_mode</span>
+        </div>
+        <div class="celeb-card"><img alt="Producer in RUSTIV"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_Fg766dqPiPop64aEX3UQkKU6pq1ffR56wNNaS8XNl4R4XILPGl6hEkr3y3ixhjz7f-scReTaVopvk4slz78m-Sc6tl8MwabKKxa2DcoWzipRnCYHHs1lKIS_iyDx1DmqZ87VuHA_MhFGZYDvxncT8Q_A67dAO6SxbIljLcdQ39JtwI7voh57BdbyEaiaM5XFng8tOAxiGr7HHEGtqP3IPbERm2aWL4QmOTdI36V1HeiXBPyoMmZDA" /><span>@prod_zico</span>
+        </div>
       </div>
     </div>
   </section>
+
+  <style>
+    .celeb-marquee {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .celeb-track {
+      display: flex;
+      width: max-content;
+      gap: 20px;
+      animation: celeb-scroll 48s linear infinite;
+    }
+
+    .celeb-card {
+      position: relative;
+      flex: 0 0 auto;
+      width: 320px;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #171717;
+      border: 1px solid #262626;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .celeb-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .celeb-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .celeb-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .celeb-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.25) 45%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .celeb-card span {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      bottom: 14px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #e5e5e5;
+    }
+
+    @keyframes celeb-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 10px));
+      }
+    }
+
+    .celeb-marquee:hover .celeb-track {
+      animation-play-state: paused;
+    }
+
+    @media (max-width: 1024px) {
+      .celeb-card {
+        width: 280px;
+      }
+
+      .celeb-track {
+        animation-duration: 42s;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .celeb-card {
+        width: 230px;
+      }
+
+      .celeb-track {
+        gap: 12px;
+        animation-duration: 32s;
+      }
+    }
+  </style>
   <!-- END: CelebritiesSection -->
 
   <!-- BEGIN: ValuePropositions -->
-  <section class="py-20 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto border-t border-white/10" data-purpose="value-props">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center">
-      
-      <!-- Prop 1 -->
-      <div class="flex flex-col items-center glass-card p-8 rounded-2xl transition-transform hover:-translate-y-2">
-        <div class="w-16 h-16 rounded-2xl border border-brandGreen/40 bg-brandGreen/10 flex items-center justify-center text-brandGreen mb-4 shadow-[0_0_20px_rgba(0,255,102,0.2)]">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-            <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+  <section class="py-16 px-4 max-w-[1120px] mx-auto border-t border-white/5 reveal" data-purpose="value-props">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 text-center reveal-stagger">
+      <div class="flex flex-col items-center">
+        <div
+          class="w-12 h-12 rounded-full border border-brandGreen/40 bg-brandGreen/10 flex items-center justify-center text-brandGreen mb-3 shadow-[0_0_15px_rgba(0,255,102,0.15)]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            </path>
+            <path
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
           </svg>
         </div>
-        <h3 class="text-lg md:text-xl font-black headline-font text-white uppercase tracking-tight">Original Cuts & Prints</h3>
-        <p class="text-xs sm:text-sm text-neutral-400 mt-2.5 max-w-xs leading-relaxed">
-          Unapologetically raw artwork designed in-house specifically for urban culture.
+        <h3 class="text-sm md:text-base font-black headline-font text-white uppercase tracking-tight">Original Designs
+        </h3>
+        <p class="text-xs text-neutral-400 mt-1.5 max-w-xs leading-relaxed">
+          Unapologetically original art created in-house for the streetwear culture.
         </p>
       </div>
-
-      <!-- Prop 2 -->
-      <div class="flex flex-col items-center glass-card p-8 rounded-2xl transition-transform hover:-translate-y-2">
-        <div class="w-16 h-16 rounded-2xl border border-brandGreen/40 bg-brandGreen/10 flex items-center justify-center text-brandGreen mb-4 shadow-[0_0_20px_rgba(0,255,102,0.2)]">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+      <div class="flex flex-col items-center">
+        <div
+          class="w-12 h-12 rounded-full border border-brandGreen/40 bg-brandGreen/10 flex items-center justify-center text-brandGreen mb-3 shadow-[0_0_15px_rgba(0,255,102,0.15)]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
             <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
           </svg>
         </div>
-        <h3 class="text-lg md:text-xl font-black headline-font text-white uppercase tracking-tight">Limited Seasonal Drops</h3>
-        <p class="text-xs sm:text-sm text-neutral-400 mt-2.5 max-w-xs leading-relaxed">
-          Strictly limited batches per drop. Once sold out, they never restock.
+        <h3 class="text-sm md:text-base font-black headline-font text-white uppercase tracking-tight">Seasonal Drops
+        </h3>
+        <p class="text-xs text-neutral-400 mt-1.5 max-w-xs leading-relaxed">
+          Limited batches per season. Once sold out, they never return.
         </p>
       </div>
-
-      <!-- Prop 3 -->
-      <div class="flex flex-col items-center glass-card p-8 rounded-2xl transition-transform hover:-translate-y-2">
-        <div class="w-16 h-16 rounded-2xl border border-brandGreen/40 bg-brandGreen/10 flex items-center justify-center text-brandGreen mb-4 shadow-[0_0_20px_rgba(0,255,102,0.2)]">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      <div class="flex flex-col items-center">
+        <div
+          class="w-12 h-12 rounded-full border border-brandGreen/40 bg-brandGreen/10 flex items-center justify-center text-brandGreen mb-3 shadow-[0_0_15px_rgba(0,255,102,0.15)]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
           </svg>
         </div>
-        <h3 class="text-lg md:text-xl font-black headline-font text-white uppercase tracking-tight">320+ GSM Premium Fabric</h3>
-        <p class="text-xs sm:text-sm text-neutral-400 mt-2.5 max-w-xs leading-relaxed">
-          Heavyweight combed cotton and fleece for unbeatable drape, softness, and longevity.
+        <h3 class="text-sm md:text-base font-black headline-font text-white uppercase tracking-tight">Finest Quality
+          Fabric</h3>
+        <p class="text-xs text-neutral-400 mt-1.5 max-w-xs leading-relaxed">
+          Heavyweight combed cotton and fleece for unbeatable longevity and drape.
         </p>
       </div>
-
     </div>
   </section>
   <!-- END: ValuePropositions -->
-
   <!-- BEGIN: NewsletterSection -->
-  <section class="py-16 px-4 max-w-[1360px] mx-auto border-t border-white/10" data-purpose="newsletter-section">
-    <div class="max-w-2xl mx-auto text-center glass-card p-8 sm:p-12 rounded-3xl border border-brandGreen/30 shadow-[0_0_30px_rgba(0,255,102,0.15)]">
-      <span class="text-brandGreen text-xs font-black tracking-widest uppercase">VIP INNER CIRCLE</span>
-      <h3 class="text-2xl sm:text-3xl font-black headline-font text-white uppercase mt-2">
-        GET SECRET DROP ALERTS & CODES
+  <section class="py-12 px-4 max-w-[1120px] mx-auto border-t border-white/5 reveal" data-purpose="newsletter-section">
+    <div class="max-w-xl mx-auto text-center">
+      <span class="text-brandGreen text-[11px] font-black tracking-widest uppercase">STAY IN THE DROP LOOP</span>
+      <h3 class="text-xl md:text-2xl font-black headline-font text-white uppercase mt-1">
+        GET SECRET CODES &amp; DROP ALERTS
       </h3>
-      <p class="text-xs sm:text-sm text-neutral-400 mt-2 mb-6">
-        Be the first to access limited drops before pieces sell out in minutes.
+      <p class="text-xs text-neutral-400 mt-1 mb-5">
+        Be the first to know before seasonal pieces sell out in minutes.
       </p>
-      
-      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" id="newsletter-form" onsubmit="handleSubscribe(event)">
-        <input class="w-full bg-[#0a0a0a] border border-white/20 text-white placeholder-neutral-500 text-sm px-5 py-3.5 rounded-xl focus:outline-none focus:border-brandGreen transition-all" placeholder="ENTER YOUR EMAIL ADDRESS" required="" type="email"/>
-        <button class="bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase px-8 py-3.5 rounded-xl transition-all whitespace-nowrap shadow-[0_0_15px_rgba(0,255,102,0.4)]" type="submit">
+      <form class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto" id="newsletter-form"
+        onsubmit="handleSubscribe(event)">
+        <input
+          class="w-full bg-[#0d0d0d] border border-neutral-700 text-white placeholder-neutral-500 text-xs px-4 py-3 rounded focus:outline-none focus:border-brandGreen transition-colors"
+          placeholder="ENTER YOUR EMAIL" required="" type="email" />
+        <button
+          class="btn-tactile bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase px-6 py-3 rounded whitespace-nowrap"
+          type="submit">
           JOIN NOW
         </button>
       </form>
-      <p class="text-brandGreen font-bold text-xs mt-3 hidden" id="newsletter-msg">🎉 You are officially on the VIP drop list!</p>
+      <p class="text-brandGreen text-xs mt-2 hidden" id="newsletter-msg">You are now on the VIP list!</p>
     </div>
   </section>
   <!-- END: NewsletterSection -->
-
   <!-- BEGIN: SiteFooter -->
-  <footer class="bg-black border-t border-white/10 pt-16 pb-10 px-4 sm:px-6 text-neutral-400 text-xs" data-purpose="site-footer">
-    <div class="max-w-[1360px] mx-auto">
-      
-      <!-- Top Row -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10">
+  <footer class="bg-black border-t border-white/10 pt-12 pb-8 px-4 text-neutral-400 text-xs" data-purpose="site-footer">
+    <div class="max-w-[1120px] mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/5">
         <div>
           <a href="#">
-            <img alt="RUSTIV Official Streetwear" class="h-9 md:h-11 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz-lKP-d1Z9gB__G-FYIORaS2fEMZO4yGAEahqCe0jhB70ljnIEA1C1rnVi3go-h3Tv7XjMviOG92Iiba3_sKlmeAFvZ9Ju6g6YUDey7m5B9bLVNtSAcZ9Lca7cj43h-x0JjcloVN1g3SQ03GgLWXHqg3DLDr2d5UtxcoXwh4PQI29Ic4VdSmZi7iP85h_VnKaWz8_M8xrZSWA-a1PE-HNQ-tuZDZB6E6MxB_KQtG5iHDOKnaQbBzZcA"/>
+            <img alt="RUSTIV Official Streetwear" class="h-8 md:h-10 w-auto object-contain brightness-100"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz-lKP-d1Z9gB__G-FYIORaS2fEMZO4yGAEahqCe0jhB70ljnIEA1C1rnVi3go-h3Tv7XjMviOG92Iiba3_sKlmeAFvZ9Ju6g6YUDey7m5B9bLVNtSAcZ9Lca7cj43h-x0JjcloVN1g3SQ03GgLWXHqg3DLDr2d5UtxcoXwh4PQI29Ic4VdSmZi7iP85h_VnKaWz8_M8xrZSWA-a1PE-HNQ-tuZDZB6E6MxB_KQtG5iHDOKnaQbBzZcA" />
           </a>
         </div>
-
         <div class="flex flex-col items-center md:items-end">
-          <h4 class="text-xs font-black headline-font text-[#00FF66] uppercase tracking-wider mb-3">
-            FOLLOW US ON SOCIALS
+          <h4 class="text-xs font-black headline-font text-[#00FF66] uppercase tracking-wider mb-2">
+            FOLLOW US
           </h4>
           <div class="flex items-center space-x-6 text-white text-xs">
-            <a class="hover:text-brandGreen flex items-center space-x-2 transition-colors" href="https://instagram.com" target="_blank">
+            <a class="hover:text-brandGreen flex items-center space-x-1.5 transition-colors"
+              href="https://instagram.com" target="_blank">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                 <rect height="20" rx="5" ry="5" stroke-width="2" width="20" x="2" y="2"></rect>
                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" stroke-width="2"></path>
               </svg>
               <span>Instagram</span>
             </a>
-            <a class="hover:text-brandGreen flex items-center space-x-2 transition-colors" href="https://facebook.com" target="_blank">
+            <a class="hover:text-brandGreen flex items-center space-x-1.5 transition-colors" href="https://facebook.com"
+              target="_blank">
               <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
-                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                <path
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+                </path>
               </svg>
               <span>Facebook</span>
             </a>
-            <a class="hover:text-brandGreen flex items-center space-x-2 transition-colors" href="https://tiktok.com" target="_blank">
+            <a class="hover:text-brandGreen flex items-center space-x-1.5 transition-colors" href="https://tiktok.com"
+              target="_blank">
               <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
-                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01v8.42c0 2.22-.88 4.38-2.48 5.92-1.66 1.6-3.95 2.45-6.28 2.33-2.32-.1-4.52-1.12-6-2.87-1.49-1.74-2.2-4.08-1.99-6.38.22-2.33 1.44-4.47 3.37-5.83 1.95-1.37 4.41-1.85 6.74-1.31.02.72-.01 1.45-.01 2.17-1.7-.49-3.56-.23-5.06.74-1.48.96-2.38 2.6-2.39 4.37-.02 1.83.89 3.58 2.44 4.54 1.54.98 3.51 1.08 5.16.27 1.6-.78 2.62-2.43 2.62-4.22V.02z"></path>
+                <path
+                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01v8.42c0 2.22-.88 4.38-2.48 5.92-1.66 1.6-3.95 2.45-6.28 2.33-2.32-.1-4.52-1.12-6-2.87-1.49-1.74-2.2-4.08-1.99-6.38.22-2.33 1.44-4.47 3.37-5.83 1.95-1.37 4.41-1.85 6.74-1.31.02.72-.01 1.45-.01 2.17-1.7-.49-3.56-.23-5.06.74-1.48.96-2.38 2.6-2.39 4.37-.02 1.83.89 3.58 2.44 4.54 1.54.98 3.51 1.08 5.16.27 1.6-.78 2.62-2.43 2.62-4.22V.02z">
+                </path>
               </svg>
               <span>TikTok</span>
             </a>
           </div>
         </div>
       </div>
-
-      <!-- Bottom Row -->
-      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-neutral-500 text-[11px] gap-4">
+      <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-neutral-500 text-[11px] gap-4">
         <div>
-          © 2026 RUSTIV WEAR CLOTHING CO. All rights reserved. Built for Bangladesh.
+          © 2026 RUSTIV WEAR CLOTHING CO. All rights reserved.
         </div>
         <div class="flex items-center space-x-6">
           <a class="hover:text-white transition-colors" href="#">Return Policy</a>
@@ -1103,202 +1237,71 @@
     </div>
   </footer>
   <!-- END: SiteFooter -->
-
-  <!-- BEGIN: MobileMenuDrawer -->
-  <div class="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex" id="mobile-menu">
-    <div class="w-4/5 max-w-sm bg-[#0a0a0a] h-full p-6 flex flex-col justify-between border-r border-white/10 shadow-2xl">
+  <!-- BEGIN: MobileMenuDrawer (RUSTIV COLLECTIONS) -->
+  <div
+    class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex"
+    id="mobile-menu">
+    <div
+      class="w-4/5 max-w-sm bg-[#0a0a0a] h-full p-6 flex flex-col justify-between border-r border-white/10 shadow-2xl">
       <div>
         <div class="flex items-center justify-between pb-6 border-b border-white/10">
-          <img alt="RUSTIV Logo" class="h-8 w-auto" src="https://cdn-by-iamfarhadur.vercel.app/rustiv.jpeg"/>
-          <button class="text-neutral-400 hover:text-brandGreen p-2 focus:outline-none" id="menu-close-btn">
+          <img alt="RUSTIV Logo" class="h-7 w-auto"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJhLIXN80-yDaua49h0WAd4M6jgO-TAYK5g84BcDIX3KsgnAJ-PgVOAcKiW1zrP_1W_vhN2t20UE8Ty2QQKembT8WpsgqECl2bbmfYkqOakARjAAh7zDJVM_zYCa_81QE_gZqyydthqk-YCm4VkqPqwTbUSYO-xil209ja8toRlEsWqBYwB5UfF9Sf8naBH3xkPpkVpaHeAai5xAE7oBw6WYv-bffjjTPai4GgVobNKxXCAlrObUh0SA" />
+          <button class="text-neutral-400 hover:text-brandGreen p-1 focus:outline-none" id="menu-close-btn">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+              <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </button>
         </div>
-
-        <div class="mt-6">
-          <span class="text-xs font-black tracking-widest text-brandGreen uppercase">RUSTIV COLLECTIONS</span>
+        <div class="mt-4">
+          <span class="text-[10px] font-black tracking-widest text-brandGreen uppercase">RUSTIV COLLECTIONS</span>
         </div>
-
         <nav class="mt-4 space-y-4">
-          <a class="block text-xl font-black headline-font text-white hover:text-brandGreen uppercase transition-colors" href="#hottest-picks" onclick="toggleMenu()">
+          <a class="block text-lg font-black headline-font text-white hover:text-brandGreen uppercase transition-colors"
+            href="#hottest-picks" onclick="toggleMenu()">
             HOTTEST PICKS 🌶️
           </a>
-          <a class="block text-xl font-black headline-font text-white hover:text-brandGreen uppercase transition-colors" href="#hottest-picks" onclick="toggleMenu(); filterByCategory('drop-shoulder')">
+          <a class="block text-lg font-black headline-font text-white hover:text-brandGreen uppercase transition-colors"
+            href="#" onclick="toggleMenu(); filterByCategory('drop-shoulder')">
             DROP SHOULDER
           </a>
-          <a class="block text-xl font-black headline-font text-white hover:text-brandGreen uppercase transition-colors" href="#hottest-picks" onclick="toggleMenu(); filterByCategory('bottoms')">
+          <a class="block text-lg font-black headline-font text-white hover:text-brandGreen uppercase transition-colors"
+            href="#" onclick="toggleMenu(); filterByCategory('bottoms')">
             BOTTOM WEAR
           </a>
-          <a class="block text-xl font-black headline-font text-white hover:text-brandGreen uppercase transition-colors" href="#hottest-picks" onclick="toggleMenu(); filterByCategory('caps')">
-            CAPS & HATS
+          <a class="block text-lg font-black headline-font text-white hover:text-brandGreen uppercase transition-colors"
+            href="#" onclick="toggleMenu(); filterByCategory('caps')">
+            CAPS &amp; HATS
           </a>
-          <a class="block text-xl font-black headline-font text-white hover:text-brandGreen uppercase transition-colors" href="#hottest-picks" onclick="toggleMenu()">
+          <a class="block text-lg font-black headline-font text-white hover:text-brandGreen uppercase transition-colors"
+            href="#" onclick="toggleMenu()">
             JERSEYS
           </a>
-          <a class="block text-xl font-black headline-font text-[#00FF66] uppercase transition-colors" href="#" onclick="toggleMenu()">
+          <a class="block text-lg font-black headline-font text-white hover:text-brandGreen uppercase transition-colors"
+            href="#" onclick="toggleMenu()">
+            TANK TOPS
+          </a>
+          <a class="block text-lg font-black headline-font text-[#00FF66] uppercase transition-colors" href="#"
+            onclick="toggleMenu()">
             JOIN RUSTIV CLUB
           </a>
         </nav>
       </div>
-
       <div class="pt-6 border-t border-white/10">
-        <p class="text-xs text-neutral-400 uppercase font-bold">Fast Delivery Across 64 Districts</p>
-        <p class="text-sm text-brandGreen font-black mt-1">CASH ON DELIVERY AVAILABLE</p>
+        <p class="text-[11px] text-neutral-400 uppercase font-bold">Fast Delivery Across 64 Districts</p>
+        <p class="text-xs text-brandGreen font-black mt-1">CASH ON DELIVERY AVAILABLE</p>
       </div>
     </div>
-    
-    <!-- Backdrop closer -->
     <div class="flex-grow cursor-pointer" id="menu-backdrop"></div>
   </div>
   <!-- END: MobileMenuDrawer -->
-
-  <!-- BEGIN: Cart Slide-Over Drawer -->
-  <div class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex justify-end" id="cart-drawer">
-    <div class="w-full max-w-md bg-[#0a0a0a] h-full flex flex-col justify-between border-l border-white/10 shadow-2xl">
-      <!-- Header -->
-      <div class="p-6 border-b border-white/10 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <h2 class="text-xl font-black headline-font text-white uppercase tracking-tight">YOUR CART</h2>
-          <span class="bg-brandGreen text-black text-xs font-black px-2 py-0.5 rounded-full" id="cart-drawer-count">0</span>
-        </div>
-        <button class="text-neutral-400 hover:text-brandGreen p-2 focus:outline-none" id="cart-close-btn">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Item List Container -->
-      <div class="p-6 overflow-y-auto flex-grow space-y-4" id="cart-items-container">
-        <!-- Empty cart default state -->
-        <div class="text-center py-12 text-neutral-500" id="cart-empty-msg">
-          <span class="text-4xl block mb-2">🛒</span>
-          <p class="text-sm font-bold uppercase">Your cart is currently empty</p>
-          <p class="text-xs mt-1">Explore our latest drops and add your favorites!</p>
-        </div>
-      </div>
-
-      <!-- Cart Footer Summary -->
-      <div class="p-6 border-t border-white/10 bg-[#050505]">
-        <div class="flex justify-between items-center text-sm font-bold text-neutral-400 mb-2">
-          <span>Subtotal</span>
-          <span class="text-white font-black headline-font text-base" id="cart-subtotal">৳0</span>
-        </div>
-        <div class="flex justify-between items-center text-xs text-neutral-400 mb-5">
-          <span>Delivery (All 64 Districts)</span>
-          <span class="text-brandGreen font-bold">FREE CASH ON DELIVERY</span>
-        </div>
-        
-        <button class="w-full bg-[#00FF66] hover:bg-white text-black font-black headline-font text-sm uppercase tracking-wider py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(0,255,102,0.4)] flex items-center justify-center gap-2" onclick="handleCheckout()">
-          <span>PROCEED TO CHECKOUT</span>
-          <span>🚀</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Backdrop closer -->
-    <div class="flex-grow order-first cursor-pointer" id="cart-backdrop"></div>
+  <div
+    class="fixed bottom-6 right-6 z-50 bg-[#00FF66] text-black font-black text-xs px-4 py-2.5 rounded shadow-2xl transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none"
+    id="toast">
+    Item Added to Cart!
   </div>
-  <!-- END: Cart Slide-Over Drawer -->
-
-  <!-- BEGIN: Search Modal Overlay -->
-  <div class="fixed inset-0 bg-black/90 backdrop-blur-xl z-50 modal-backdrop hidden-modal flex items-start justify-center pt-20 px-4" id="search-modal">
-    <div class="w-full max-w-2xl bg-[#0d0d0d] border border-white/10 rounded-3xl p-6 sm:p-8 modal-content shadow-2xl relative">
-      <button class="absolute top-5 right-5 text-neutral-400 hover:text-brandGreen p-2 focus:outline-none" id="search-close-btn">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-        </svg>
-      </button>
-
-      <h3 class="text-xl font-black headline-font text-white uppercase tracking-tight mb-4">SEARCH RUSTIV DROPS 🔍</h3>
-      
-      <div class="relative mb-6">
-        <input id="search-input" class="w-full bg-black border border-brandGreen/40 text-white placeholder-neutral-500 text-sm px-5 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brandGreen transition-all" placeholder="Search Drop Shoulder, Cargo, Vintage Tee, Cap..." oninput="handleSearchInput(this.value)"/>
-      </div>
-
-      <!-- Quick Category Suggestions -->
-      <div class="flex flex-wrap items-center gap-2 mb-6 text-xs">
-        <span class="text-neutral-400 font-bold uppercase">Popular:</span>
-        <button class="bg-neutral-900 hover:bg-brandGreen hover:text-black text-neutral-300 font-bold px-3 py-1 rounded-full transition-all" onclick="setSearchQuery('Drop Shoulder')">Drop Shoulder</button>
-        <button class="bg-neutral-900 hover:bg-brandGreen hover:text-black text-neutral-300 font-bold px-3 py-1 rounded-full transition-all" onclick="setSearchQuery('Cargo')">Cargo Pant</button>
-        <button class="bg-neutral-900 hover:bg-brandGreen hover:text-black text-neutral-300 font-bold px-3 py-1 rounded-full transition-all" onclick="setSearchQuery('Acid Wash')">Acid Wash</button>
-        <button class="bg-neutral-900 hover:bg-brandGreen hover:text-black text-neutral-300 font-bold px-3 py-1 rounded-full transition-all" onclick="setSearchQuery('Cap')">Cap</button>
-      </div>
-
-      <!-- Search Results Area -->
-      <div class="max-h-72 overflow-y-auto space-y-3" id="search-results-list">
-        <p class="text-xs text-neutral-500 text-center py-6">Type above to search through official drops...</p>
-      </div>
-    </div>
-  </div>
-  <!-- END: Search Modal Overlay -->
-
-  <!-- BEGIN: Quick View Modal -->
-  <div class="fixed inset-0 bg-black/90 backdrop-blur-xl z-50 modal-backdrop hidden-modal flex items-center justify-center p-4" id="quick-view-modal">
-    <div class="w-full max-w-3xl bg-[#0d0d0d] border border-white/10 rounded-3xl p-6 sm:p-8 modal-content shadow-2xl relative grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <button class="absolute top-4 right-4 z-20 text-neutral-400 hover:text-brandGreen p-2 focus:outline-none" id="qv-close-btn">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-        </svg>
-      </button>
-
-      <!-- Image Column -->
-      <div class="aspect-[4/5] bg-neutral-950 rounded-2xl overflow-hidden relative">
-        <img id="qv-img" class="w-full h-full object-cover object-center" src="" alt="Product Preview"/>
-      </div>
-
-      <!-- Info Column -->
-      <div class="flex flex-col justify-between">
-        <div>
-          <span id="qv-gsm" class="text-xs font-extrabold text-brandGreen uppercase tracking-wider block mb-1">320 GSM Heavy Cotton</span>
-          <h2 id="qv-title" class="text-xl sm:text-2xl font-black headline-font text-white uppercase tracking-tight leading-tight">PRODUCT TITLE</h2>
-          
-          <div class="flex items-baseline space-x-3 mt-3">
-            <span id="qv-price" class="text-2xl font-black headline-font text-brandGreen">৳1,490</span>
-            <span id="qv-old-price" class="text-sm text-neutral-500 line-through">৳1,790</span>
-          </div>
-
-          <div class="mt-5 border-t border-white/10 pt-4">
-            <span class="text-xs font-bold text-neutral-300 uppercase block mb-2">Select Size:</span>
-            <div class="flex items-center gap-2" id="qv-size-selector">
-              <button class="size-btn px-4 py-2 text-xs font-black rounded-lg border border-brandGreen bg-brandGreen text-black transition-all">S</button>
-              <button class="size-btn px-4 py-2 text-xs font-black rounded-lg border border-white/20 bg-neutral-900 text-white hover:border-brandGreen transition-all">M</button>
-              <button class="size-btn px-4 py-2 text-xs font-black rounded-lg border border-white/20 bg-neutral-900 text-white hover:border-brandGreen transition-all">L</button>
-              <button class="size-btn px-4 py-2 text-xs font-black rounded-lg border border-white/20 bg-neutral-900 text-white hover:border-brandGreen transition-all">XL</button>
-              <button class="size-btn px-4 py-2 text-xs font-black rounded-lg border border-white/20 bg-neutral-900 text-white hover:border-brandGreen transition-all">XXL</button>
-            </div>
-          </div>
-
-          <div class="mt-4 text-xs text-neutral-400 space-y-1">
-            <p>✓ Cash on Delivery Available</p>
-            <p>✓ Check package before payment</p>
-            <p>✓ 7-Day Exchange & Returns</p>
-          </div>
-        </div>
-
-        <div class="mt-6 space-y-2">
-          <button id="qv-buy-btn" class="w-full bg-brandGreen hover:bg-white text-black font-black headline-font text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(0,255,102,0.4)]">
-            BUY NOW
-          </button>
-          <button id="qv-cart-btn" class="w-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-white font-bold headline-font text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all">
-            ADD TO CART
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- END: Quick View Modal -->
-
-  <!-- Toast Notification -->
-  <div class="fixed bottom-6 right-6 z-50 bg-[#00FF66] text-black font-black text-xs sm:text-sm px-5 py-3 rounded-xl shadow-[0_0_25px_rgba(0,255,102,0.5)] transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2" id="toast">
-    <span>Item Added to Cart!</span>
-  </div>
-
-  <!-- BEGIN: Interactive JavaScript Engine -->
+  <!-- BEGIN: InteractiveHandlers -->
   <script data-purpose="rustiv-interactivity">
-    // Menu Drawer Logic
     const menuOpenBtn = document.getElementById('menu-open-btn');
     const menuCloseBtn = document.getElementById('menu-close-btn');
     const menuDrawer = document.getElementById('mobile-menu');
@@ -1307,162 +1310,84 @@
     function toggleMenu() {
       menuDrawer.classList.toggle('-translate-x-full');
     }
+
     if (menuOpenBtn) menuOpenBtn.addEventListener('click', toggleMenu);
     if (menuCloseBtn) menuCloseBtn.addEventListener('click', toggleMenu);
     if (menuBackdrop) menuBackdrop.addEventListener('click', toggleMenu);
 
-    // Cart State & Slide-Over Logic
-    let cart = [];
-    const cartOpenBtn = document.getElementById('cart-open-btn');
-    const cartCloseBtn = document.getElementById('cart-close-btn');
-    const cartDrawer = document.getElementById('cart-drawer');
-    const cartBackdrop = document.getElementById('cart-backdrop');
+    let cartCount = 0;
     const cartBadge = document.getElementById('cart-badge-count');
-    const cartDrawerCount = document.getElementById('cart-drawer-count');
-    const cartItemsContainer = document.getElementById('cart-items-container');
-    const cartEmptyMsg = document.getElementById('cart-empty-msg');
-    const cartSubtotal = document.getElementById('cart-subtotal');
     const toast = document.getElementById('toast');
 
-    function toggleCartDrawer() {
-      cartDrawer.classList.toggle('translate-x-full');
-    }
-
-    if (cartOpenBtn) cartOpenBtn.addEventListener('click', toggleCartDrawer);
-    if (cartCloseBtn) cartCloseBtn.addEventListener('click', toggleCartDrawer);
-    if (cartBackdrop) cartBackdrop.addEventListener('click', toggleCartDrawer);
-
     function showToast(message) {
-      toast.querySelector('span').textContent = message;
+      toast.textContent = message;
       toast.classList.remove('translate-y-24', 'opacity-0');
       toast.classList.add('translate-y-0', 'opacity-100');
       setTimeout(() => {
         toast.classList.add('translate-y-24', 'opacity-0');
         toast.classList.remove('translate-y-0', 'opacity-100');
-      }, 2800);
+      }, 2500);
     }
 
-    function renderCart() {
-      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-      cartBadge.textContent = totalQty;
-      cartDrawerCount.textContent = totalQty;
-
-      if (cart.length === 0) {
-        cartEmptyMsg.style.display = 'block';
-        cartItemsContainer.querySelectorAll('.cart-item-row').forEach(el => el.remove());
-        cartSubtotal.textContent = '৳0';
-        return;
-      }
-
-      cartEmptyMsg.style.display = 'none';
-      cartItemsContainer.querySelectorAll('.cart-item-row').forEach(el => el.remove());
-
-      let subtotal = 0;
-      cart.forEach((item, index) => {
-        subtotal += item.price * item.qty;
-        const row = document.createElement('div');
-        row.className = 'cart-item-row flex items-center justify-between p-3 bg-neutral-900/80 rounded-xl border border-white/10';
-        row.innerHTML = `
-          <div class="flex items-center gap-3">
-            <img src="${item.img}" class="w-14 h-16 object-cover rounded-lg bg-black"/>
-            <div>
-              <h4 class="text-xs font-bold text-white uppercase line-clamp-1">${item.name}</h4>
-              <span class="text-[11px] text-brandGreen font-black">৳${item.price}</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="flex items-center border border-white/20 rounded-lg overflow-hidden bg-black text-xs">
-              <button class="px-2 py-1 hover:bg-neutral-800 text-white font-bold" onclick="updateCartQty(${index}, -1)">-</button>
-              <span class="px-2.5 py-1 text-brandGreen font-black">${item.qty}</span>
-              <button class="px-2 py-1 hover:bg-neutral-800 text-white font-bold" onclick="updateCartQty(${index}, 1)">+</button>
-            </div>
-            <button class="text-neutral-500 hover:text-red-400 p-1" onclick="removeCartItem(${index})">
-              🗑️
-            </button>
-          </div>
-        `;
-        cartItemsContainer.appendChild(row);
-      });
-
-      cartSubtotal.textContent = `৳${subtotal.toLocaleString()}`;
+    function bumpCartBadge() {
+      cartBadge.classList.remove('bump');
+      void cartBadge.offsetWidth;
+      cartBadge.classList.add('bump');
     }
 
-    function handleAddToCart(name, price, img) {
-      const existing = cart.find(item => item.name === name);
-      if (existing) {
-        existing.qty++;
-      } else {
-        cart.push({ name, price, img, qty: 1 });
-      }
-      renderCart();
+    function handleAddToCart(name) {
+      cartCount++;
+      cartBadge.textContent = cartCount;
+      bumpCartBadge();
       showToast(`Added "${name}" to Cart!`);
     }
 
-    function handleBuyNow(name, price, img) {
-      handleAddToCart(name, price, img);
-      if (cartDrawer.classList.contains('translate-x-full')) {
-        toggleCartDrawer();
-      }
+    function handleBuyNow(name, price) {
+      cartCount++;
+      cartBadge.textContent = cartCount;
+      bumpCartBadge();
+      showToast(`Redirecting to Checkout for ৳${price}...`);
     }
 
-    function updateCartQty(index, delta) {
-      cart[index].qty += delta;
-      if (cart[index].qty <= 0) {
-        cart.splice(index, 1);
-      }
-      renderCart();
-    }
-
-    function removeCartItem(index) {
-      const name = cart[index].name;
-      cart.splice(index, 1);
-      renderCart();
-      showToast(`Removed "${name}" from Cart`);
-    }
-
-    function handleCheckout() {
-      if (cart.length === 0) {
-        showToast('Your cart is empty!');
-        return;
-      }
-      showToast('Redirecting to Checkout Portal...');
-    }
-
-    // Wishlist Toggle
     document.querySelectorAll('.wishlist-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const svg = btn.querySelector('svg');
+        btn.classList.remove('pop');
+        void btn.offsetWidth;
+        btn.classList.add('pop');
         if (btn.classList.contains('text-brandGreen')) {
-          btn.classList.remove('text-brandGreen', 'border-brandGreen');
+          btn.classList.remove('text-brandGreen');
           svg.setAttribute('fill', 'none');
           showToast('Removed from Wishlist');
         } else {
-          btn.classList.add('text-brandGreen', 'border-brandGreen');
+          btn.classList.add('text-brandGreen');
           svg.setAttribute('fill', '#00FF66');
-          showToast('Saved to Wishlist! ❤️');
+          showToast('Saved to Wishlist!');
         }
       });
     });
 
-    // Category Filter Functionality
     function filterByCategory(cat) {
       const cards = document.querySelectorAll('#products-grid .product-card');
       const pills = document.querySelectorAll('#category-filter-pills .filter-pill');
 
       pills.forEach(pill => {
         if (pill.getAttribute('data-cat') === cat) {
-          pill.classList.add('bg-brandGreen', 'text-black', 'shadow-[0_0_15px_rgba(0,255,102,0.3)]');
-          pill.classList.remove('bg-[#141414]', 'text-neutral-300', 'border-white/10');
+          pill.classList.add('bg-brandGreen', 'text-black');
+          pill.classList.remove('bg-neutral-900', 'text-neutral-300', 'border-neutral-800');
         } else {
-          pill.classList.remove('bg-brandGreen', 'text-black', 'shadow-[0_0_15px_rgba(0,255,102,0.3)]');
-          pill.classList.add('bg-[#141414]', 'text-neutral-300', 'border-white/10');
+          pill.classList.remove('bg-brandGreen', 'text-black');
+          pill.classList.add('bg-neutral-900', 'text-neutral-300', 'border-neutral-800');
         }
       });
 
       cards.forEach(card => {
         if (cat === 'all' || card.getAttribute('data-category') === cat) {
           card.style.display = 'flex';
+          card.style.animation = 'none';
+          void card.offsetWidth;
+          card.style.animation = 'popIn 0.4s cubic-bezier(0.34,1.56,0.64,1)';
         } else {
           card.style.display = 'none';
         }
@@ -1480,179 +1405,74 @@
       });
     });
 
-    // Hero Slide Switcher
-    const heroSlides = [
-      {
-        img: 'https://cdn-by-iamfarhadur.vercel.app/rustiv-landing.jpeg',
-        title: 'CHECK OUT OUR HOTTEST PICKS',
-        subtitle: 'Authentic 320+ GSM heavyweight streetwear engineered for the bold, fearless youth of Bangladesh.'
-      },
-      {
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD1_Fg766dqPiPop64aEX3UQkKU6pq1ffR56wNNaS8XNl4R4XILPGl6hEkr3y3ixhjz7f-scReTaVopvk4slz78m-Sc6tl8MwabKKxa2DcoWzipRnCYHHs1lKIS_iyDx1DmqZ87VuHA_MhFGZYDvxncT8Q_A67dAO6SxbIljLcdQ39JtwI7voh57BdbyEaiaM5XFng8tOAxiGr7HHEGtqP3IPbERm2aWL4QmOTdI36V1HeiXBPyoMmZDA',
-        title: 'DROP SHOULDER COLLECTION 2026',
-        subtitle: 'Iconic oversized boxy fits with high-density underground prints that redefine urban style.'
-      },
-      {
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng',
-        title: 'TACTICAL CARGO & BOTTOM WEAR',
-        subtitle: 'Heavy-duty 6-pocket cargo trousers engineered for ultimate movement and long utility.'
-      },
-      {
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew',
-        title: 'LIMITED ACCESSORIES & CAPS',
-        subtitle: 'Crown your fit with authentic 3D embroidered snapbacks and signature urban headwear.'
-      }
-    ];
+    function setupCarousel(sliderId, prevBtnId, nextBtnId) {
+      const slider = document.getElementById(sliderId);
+      const prevBtn = document.getElementById(prevBtnId);
+      const nextBtn = document.getElementById(nextBtnId);
+      if (!slider) return;
 
-    function switchHeroSlide(index) {
-      const slide = heroSlides[index];
-      const img = document.getElementById('hero-bg-img');
-      const title = document.getElementById('hero-title');
-      const subtitle = document.getElementById('hero-subtitle');
-      const dots = document.querySelectorAll('.hero-dot');
+      const step = 220;
 
-      img.style.opacity = '0.4';
-      setTimeout(() => {
-        img.src = slide.img;
-        title.textContent = slide.title;
-        subtitle.textContent = slide.subtitle;
-        img.style.opacity = '1';
-      }, 300);
-
-      dots.forEach((dot, i) => {
-        if (i === index) {
-          dot.className = 'hero-dot w-10 h-2 rounded-full bg-[#00FF66] transition-all shadow-[0_0_10px_#00FF66]';
-        } else {
-          dot.className = 'hero-dot w-3 h-2 rounded-full bg-white/40 hover:bg-white transition-all';
-        }
-      });
-    }
-
-    // Search Modal Interactivity
-    const searchBtn = document.getElementById('search-btn');
-    const searchCloseBtn = document.getElementById('search-close-btn');
-    const searchModal = document.getElementById('search-modal');
-    const searchInput = document.getElementById('search-input');
-    const searchResultsList = document.getElementById('search-results-list');
-
-    function openSearchModal() {
-      searchModal.classList.remove('hidden-modal');
-      setTimeout(() => searchInput.focus(), 150);
-    }
-    function closeSearchModal() {
-      searchModal.classList.add('hidden-modal');
-    }
-
-    if (searchBtn) searchBtn.addEventListener('click', openSearchModal);
-    if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearchModal);
-
-    function setSearchQuery(query) {
-      searchInput.value = query;
-      handleSearchInput(query);
-    }
-
-    const allProductsData = [
-      { name: 'RUSTIV DROP SHOULDER TEE', price: 1490, category: 'Drop Shoulder', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBCcqBsZOVMTamUfoUnPuFgN81NfwnLO2yvd-cDKcXX7BatF-XGLRbFSEzDmhf3R1ZjWN0eohJ2dvFlqP8PB4Hqd2kSjj0_Q8tJEDWJF8_K1bt2POrvDzgB0X5xmNqA53P-mbQBqc6M36H2goyLAqdNOeNp3QvT6k_Qohc_qX0LRcUaurq7_0p2aFpn9004o0-XVLOWBlemWkuK2ddbFRzAxASOM5soq_Wy8VdMaUb8IdARyscpKPAZOA' },
-      { name: 'RUSTIV DAYTONA VINTAGE TEE', price: 1390, category: 'Drop Shoulder', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9EvW6KiWw13Tz5VdqK8xB-Il5BMJRRSS6b5uEvK-bV08cr9X4v9o5bE0QaDvQNoZpTfc3EQyt4WBo_IQ3ivTgY8Jg_X5szZHf2qF1GQTy6r4-YQu69ec8MtPmjCNlFm82WPl01cti-NEARt4C_e-QEi-Q-GqyZq1SaUg1ItG-onzL4KEkY05lRsJqE17QHp563MraybF9Aq-YzrOS-8X772O56WZJNKRdGRKLKLp2TKrH-i1Z0ZwZzA' },
-      { name: 'RUSTIV ACID WASH TOKYO TEE', price: 1550, category: 'Drop Shoulder', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMp-c-DTQIeHACgbAoDXGP6nucA6a2smCq95SleqK3Q3w8kKO4LDtkFzteOW3FKZoGJVSLf8FxF8elwnVvFcJE3XwgC0TeE-9D400PPB5_T_TzJq5qwOoC_XH7atjG7ZpZKbeQ6zLouTvpJK3mVGbwWRlUrWVBJrksG_om3N5O1kBDXd4P4s3SJDyxNkbScNJH-l_H1osFxTgqe05MWTQ-MauXrS3iK3KjKUG25pbWClJd3_ZuT9pBdA' },
-      { name: 'RUSTIV TACTICAL CARGO PANT', price: 2190, category: 'Bottoms', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5prrswJnItr9mzHl-6pqNwM1XtcwFX1e7NRVfwPQtrXkNx-ozuZZnz5ILtL2JydiWJCBscU4Uh-JXaIXXlNTMR8zd5TkhWee8ZMEgoRIfPjUN2eqxjqJJkUqLJ01Z0PsmGnytbi1YJ9lxokJtN-K8OApUbVAogXKRj5qWsVSCvso1RqEtawRBnd0tNNR_0r1y6TCtNAsDgrEATurC2_OFvWw669iM5AAwYDF98xtm__OtwQ4oMzhvng' },
-      { name: 'RUSTIV CYBER MATRIX TEE', price: 1450, category: 'Drop Shoulder', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLVPBD_sXFgFpCP-ori_YY_jKfNfvGsxG_LzB7mcnmRvhwU1BUom7FK3OsJnKZtJvr9oQ-x1jCYva70x9bGLTMFONvKl6MCqToFABKG58zdfv7UAkhWalf83LNdbCOmbssoGN-omYLHJ-ssLyMR30i6-O3YXaIn7szMPMMzL5Hp_-6FvuLYVnFGmNGonpGq0HjexoZJsLsjh7buF9PNU3SaGeunnHyu9s4P5pFJmbeI9kmbZAUTR-_jA' },
-      { name: 'RUSTIV OVERSIZED HOODIE', price: 2490, category: 'Outerwear', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcdIr0uSXzZFtvMUBhcw5AgcTXs3wlFYKLUWOWCm4LFhOJAAsuxkUDFHZJEzgLPhZZLLhUtRfd0FjDJGMVpfQWZbxXuuup8FSCbK20viECot1W9FECPU8HRXMQuXwG-LmFKel8G6XKEskwuHJ6AYXx3GPI2uavstfnx3DN4OBvW9CTZ55kUWGVIjmuNKycUbeAQTbNnNusY-a64KfRJbmaUTcfcHcyWLxO2k18ox11E_6SbXX4KGiUMQ' },
-      { name: 'RUSTIV ATHLETIC TRACK JERSEY', price: 1690, category: 'Jerseys', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdoMYimjHEqxEuicEKyiCsG0Oo0UI38eaTVHRfPX3hS62_WaH3jwFMkN5SOyWEbB69kR_HQhFmnweax9AkK3DB7012HLDqJ2yylBNbkrFUTpt4AKiAszRJidOA68T0Hi80-aM1-RuGbQm5QnmONB8QcXyZjbP8McxmoBdxTjGXg17JAMmUvmfF8E3yxeSNdd1pnewswWQsamCnDfi6zzUK-irGKqvqm8ngcXJB3l_O0nCu6-mhJNvgLg' },
-      { name: 'RUSTIV URBAN SNAPBACK CAP', price: 990, category: 'Caps', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDwRGz9S67rREmvHNVk2roDAPzI1B_d_chznXxUAi63m2GHPRP_VRssY-v3ewl8F5Ho7DrIBa51buMnbH2qvY3ClcPYu7Agvu6PE-XCq_pirpvk93Lt0JiiRWJ9LeeGRDUnmP05Lt2akwS4ZbpAiAk1wiczwHf-f__5uajM3marfgnbBzSznqB4VVzKKHgO639its9n5CWXotQiiXruvbcDqtiJhDz77pdUDp-pKGY4GLmBKUEY_pgSew' }
-    ];
-
-    function handleSearchInput(val) {
-      const q = val.trim().toLowerCase();
-      searchResultsList.innerHTML = '';
-      if (!q) {
-        searchResultsList.innerHTML = '<p class="text-xs text-neutral-500 text-center py-6">Type above to search through official drops...</p>';
-        return;
-      }
-      const matches = allProductsData.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
-      if (matches.length === 0) {
-        searchResultsList.innerHTML = '<p class="text-xs text-neutral-400 text-center py-6">No matching drops found. Try "Drop Shoulder" or "Cargo"</p>';
-        return;
-      }
-      matches.forEach(p => {
-        const item = document.createElement('div');
-        item.className = 'flex items-center justify-between p-3 bg-neutral-900 rounded-xl hover:bg-neutral-800 cursor-pointer transition-all border border-white/5';
-        item.onclick = () => {
-          closeSearchModal();
-          handleAddToCart(p.name, p.price, p.img);
-        };
-        item.innerHTML = `
-          <div class="flex items-center gap-3">
-            <img src="${p.img}" class="w-12 h-14 object-cover rounded-lg bg-black"/>
-            <div>
-              <h4 class="text-xs font-bold text-white uppercase">${p.name}</h4>
-              <span class="text-[11px] text-neutral-400 font-medium">${p.category}</span>
-            </div>
-          </div>
-          <span class="text-xs font-black text-brandGreen">৳${p.price}</span>
-        `;
-        searchResultsList.appendChild(item);
-      });
-    }
-
-    // Quick View Modal
-    const qvModal = document.getElementById('quick-view-modal');
-    const qvCloseBtn = document.getElementById('qv-close-btn');
-    let activeQvItem = null;
-
-    function openQuickView(name, price, oldPrice, img, gsm) {
-      activeQvItem = { name, price, img };
-      document.getElementById('qv-img').src = img;
-      document.getElementById('qv-title').textContent = name;
-      document.getElementById('qv-price').textContent = `৳${price}`;
-      document.getElementById('qv-old-price').textContent = `৳${oldPrice}`;
-      document.getElementById('qv-gsm').textContent = gsm;
-
-      qvModal.classList.remove('hidden-modal');
-    }
-
-    function closeQuickView() {
-      qvModal.classList.add('hidden-modal');
-    }
-    if (qvCloseBtn) qvCloseBtn.addEventListener('click', closeQuickView);
-
-    document.getElementById('qv-cart-btn').addEventListener('click', () => {
-      if (activeQvItem) {
-        handleAddToCart(activeQvItem.name, activeQvItem.price, activeQvItem.img);
-        closeQuickView();
-      }
-    });
-
-    document.getElementById('qv-buy-btn').addEventListener('click', () => {
-      if (activeQvItem) {
-        handleBuyNow(activeQvItem.name, activeQvItem.price, activeQvItem.img);
-        closeQuickView();
-      }
-    });
-
-    // Size Selector Buttons
-    document.querySelectorAll('#qv-size-selector .size-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('#qv-size-selector .size-btn').forEach(b => {
-          b.className = 'size-btn px-4 py-2 text-xs font-black rounded-lg border border-white/20 bg-neutral-900 text-white hover:border-brandGreen transition-all';
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          slider.scrollBy({ left: -step, behavior: 'smooth' });
         });
-        btn.className = 'size-btn px-4 py-2 text-xs font-black rounded-lg border border-brandGreen bg-brandGreen text-black transition-all';
-      });
-    });
+      }
 
-    // Newsletter Handler
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          slider.scrollBy({ left: step, behavior: 'smooth' });
+        });
+      }
+
+      let autoPlayTimer = setInterval(() => {
+        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: step, behavior: 'smooth' });
+        }
+      }, 3500);
+
+      slider.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+      slider.addEventListener('mouseleave', () => {
+        autoPlayTimer = setInterval(() => {
+          if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            slider.scrollBy({ left: step, behavior: 'smooth' });
+          }
+        }, 3500);
+      });
+    }
+
+    setupCarousel('customer-slider', 'cust-slider-prev', 'cust-slider-next');
+    setupCarousel('celeb-slider', 'celeb-slider-prev', 'celeb-slider-next');
+
     function handleSubscribe(e) {
       e.preventDefault();
       const msg = document.getElementById('newsletter-msg');
       if (msg) msg.classList.remove('hidden');
       e.target.reset();
-      showToast('Subscribed to VIP Drop List! ⚡');
+      showToast('Subscribed to RUSTIV Drop Alerts!');
     }
 
-    // Initialize initial cart rendering
-    renderCart();
-  </script>
-  <!-- END: Interactive JavaScript Engine -->
+    const revealTargets = document.querySelectorAll('.reveal, .reveal-stagger');
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
+      revealTargets.forEach(el => revealObserver.observe(el));
+    } else {
+      revealTargets.forEach(el => el.classList.add('is-visible'));
+    }
+  </script>
+  <!-- END: InteractiveHandlers -->
 </body>
+
 </html>
